@@ -23,9 +23,11 @@ export function audioCacheDir(): string {
 }
 
 export function resourcesDir(): string {
-  // electron-builder packs resources into Contents/Resources/resources
   if (app.isPackaged) {
-    return path.join(process.resourcesPath, 'resources');
+    const ext = path.join(process.resourcesPath, 'resources');
+    if (fs.existsSync(ext)) return ext;
+    // fallback: inside asar (where extraResources didn't apply)
+    return path.join(app.getAppPath(), 'resources');
   }
   return path.join(__dirname, '..', '..', 'resources');
 }

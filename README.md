@@ -99,6 +99,21 @@ xattr -dr com.apple.quarantine /Applications/LinguaForge.app
 
 API-ключ зашит в коде (free-tier). Перезаписать можно в настройках или через переменную окружения `MISTRAL_API_KEY`.
 
+## Troubleshooting
+
+### Приложение запускается и сразу закрывается
+Проверь переменную окружения `ELECTRON_RUN_AS_NODE`. Если она `=1`, то Electron работает как обычный Node, и собранный .app падает молча.
+```bash
+echo $ELECTRON_RUN_AS_NODE
+unset ELECTRON_RUN_AS_NODE
+```
+Добавь `unset ELECTRON_RUN_AS_NODE` в `~/.zshrc` если она у тебя глобально включена.
+
+Сборка `build-mac.sh` уже делает unset защитно, но запущенный .app наследует окружение запускающего процесса (Finder обычно чистый, Terminal может быть с этой переменной).
+
+### Лог запуска
+`~/Library/Application Support/LinguaForge/logs/main.log` пишется на каждый запуск. Если файла нет вообще, значит Electron не дошёл до main.ts (см. предыдущий пункт).
+
 ## Лицензия
 
 MIT

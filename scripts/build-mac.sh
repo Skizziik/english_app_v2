@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+# Defensive: some shells export ELECTRON_RUN_AS_NODE=1 globally,
+# which makes Electron behave as a plain Node interpreter and the app fails silently.
+unset ELECTRON_RUN_AS_NODE
+
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 

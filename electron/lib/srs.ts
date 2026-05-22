@@ -36,5 +36,5 @@ export function reviewCard(card: Card, rating: RatingValue) {
     4: Rating.Easy,
   };
   const r = mapped[rating];
-  return scheduling[r];
+  return (scheduling as any)[r];
 }
