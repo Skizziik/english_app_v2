@@ -1,0 +1,101 @@
+[
+  {
+    "order": 1,
+    "cefrLevel": "A1",
+    "title": "To be (am, is, are)",
+    "titleRu": "Глагол быть",
+    "explanation": "Глагол **to be** означает \"быть, являться, находиться\". В английском он меняется по лицам:\n\n- I **am** (я есть)\n- you **are** (ты есть, вы есть)\n- he / she / it **is** (он, она, оно есть)\n- we **are** (мы есть)\n- they **are** (они есть)\n\nКраткие формы: I'm, you're, he's, she's, we're, they're.\n\nВ отрицании добавляем **not**:\n- I am not (I'm not)\n- He is not (he isn't)\n- They are not (they aren't)\n\nВ вопросе меняем местами:\n- Are you happy?\n- Is she a doctor?",
+    "examples": [
+      { "en": "I am a student.", "ru": "Я студент." },
+      { "en": "She is my sister.", "ru": "Она моя сестра." },
+      { "en": "We are friends.", "ru": "Мы друзья." },
+      { "en": "Are you ready?", "ru": "Ты готов?" },
+      { "en": "It is cold today.", "ru": "Сегодня холодно." }
+    ]
+  },
+  {
+    "order": 2,
+    "cefrLevel": "A1",
+    "title": "Articles a / an / the",
+    "titleRu": "Артикли",
+    "explanation": "В английском перед существительным часто стоит **артикль**:\n\n- **a** перед согласным звуком: a book, a cat, a teacher\n- **an** перед гласным звуком: an apple, an egg, an hour\n- **the** когда речь идёт о конкретном предмете: the book on the table\n\nАртикли не используются с:\n- именами: I love **Anna**\n- множественным числом в общем смысле: I like **cats**\n- неисчисляемым в общем смысле: I drink **water**",
+    "examples": [
+      { "en": "I have a dog.", "ru": "У меня есть собака." },
+      { "en": "She is an artist.", "ru": "Она художница." },
+      { "en": "The cat is on the bed.", "ru": "Кошка на кровати." }
+    ]
+  },
+  {
+    "order": 3,
+    "cefrLevel": "A1",
+    "title": "Plurals",
+    "titleRu": "Множественное число",
+    "explanation": "Большинство существительных образуют множественное число добавлением **-s**:\n- book → books\n- cat → cats\n\nПосле -s, -x, -ch, -sh, -o добавляем **-es**:\n- bus → buses\n- box → boxes\n- watch → watches\n\nЕсли слово заканчивается на согласный + y, заменяем y на **ies**:\n- city → cities\n- baby → babies\n\nЕсть исключения:\n- man → men, woman → women, child → children, foot → feet",
+    "examples": [
+      { "en": "Two cats.", "ru": "Два кота." },
+      { "en": "Three boxes.", "ru": "Три коробки." },
+      { "en": "Many cities.", "ru": "Много городов." }
+    ]
+  },
+  {
+    "order": 4,
+    "cefrLevel": "A1",
+    "title": "Present Simple",
+    "titleRu": "Настоящее простое",
+    "explanation": "**Present Simple** используется для:\n- регулярных действий (I read every day)\n- общих фактов (Water boils at 100 degrees)\n- расписаний (The train leaves at 8)\n\nФормула:\n- I / you / we / they **work**\n- he / she / it **works** (добавляем -s)\n\nВопросы и отрицания через вспомогательный **do / does**:\n- Do you work?\n- Does she work?\n- I do not (don't) work.\n- He does not (doesn't) work.",
+    "examples": [
+      { "en": "I read every day.", "ru": "Я читаю каждый день." },
+      { "en": "She works in a school.", "ru": "Она работает в школе." },
+      { "en": "Do you like coffee?", "ru": "Ты любишь кофе?" },
+      { "en": "He doesn't speak French.", "ru": "Он не говорит по-французски." }
+    ]
+  },
+  {
+    "order": 5,
+    "cefrLevel": "A1",
+    "title": "Possessive pronouns",
+    "titleRu": "Притяжательные местоимения",
+    "explanation": "Притяжательные местоимения отвечают на вопрос **чей?**:\n\n- I → my (мой)\n- you → your (твой, ваш)\n- he → his (его)\n- she → her (её)\n- it → its (его, её)\n- we → our (наш)\n- they → their (их)\n\nСтоят перед существительным: my book, her house, our friends.",
+    "examples": [
+      { "en": "This is my book.", "ru": "Это моя книга." },
+      { "en": "Her name is Anna.", "ru": "Её зовут Анна." },
+      { "en": "Their house is big.", "ru": "Их дом большой." }
+    ]
+  },
+  {
+    "order": 6,
+    "cefrLevel": "A1",
+    "title": "Can (modal)",
+    "titleRu": "Глагол can",
+    "explanation": "**Can** означает \"могу, умею\". После него идёт инфинитив без to:\n- I can swim. (Я умею плавать)\n- She can speak English.\n\nОтрицание: **cannot** или **can't**:\n- I can't drive.\n\nВопрос: меняем местами:\n- Can you help me?",
+    "examples": [
+      { "en": "I can read.", "ru": "Я умею читать." },
+      { "en": "She can't sing.", "ru": "Она не умеет петь." },
+      { "en": "Can you help me?", "ru": "Ты можешь мне помочь?" }
+    ]
+  },
+  {
+    "order": 7,
+    "cefrLevel": "A2",
+    "title": "Present Continuous",
+    "titleRu": "Настоящее длительное",
+    "explanation": "**Present Continuous** описывает действие прямо сейчас:\n\nФормула: **am / is / are + V-ing**:\n- I am reading.\n- She is working.\n- They are playing.\n\nСигнальные слова: now, right now, at the moment.",
+    "examples": [
+      { "en": "I am reading a book.", "ru": "Я читаю книгу." },
+      { "en": "She is cooking now.", "ru": "Она готовит сейчас." },
+      { "en": "What are you doing?", "ru": "Что ты делаешь?" }
+    ]
+  },
+  {
+    "order": 8,
+    "cefrLevel": "A2",
+    "title": "Past Simple",
+    "titleRu": "Прошедшее простое",
+    "explanation": "**Past Simple** описывает действия в прошлом.\n\nПравильные глаголы: добавляем **-ed**:\n- work → worked\n- play → played\n- live → lived\n\nНеправильные глаголы запоминаем:\n- go → went\n- have → had\n- see → saw\n- be → was / were\n\nВопрос и отрицание через **did**:\n- Did you go?\n- I didn't go.",
+    "examples": [
+      { "en": "I worked yesterday.", "ru": "Я работал вчера." },
+      { "en": "She went home.", "ru": "Она пошла домой." },
+      { "en": "Did you see him?", "ru": "Ты его видел?" }
+    ]
+  }
+]

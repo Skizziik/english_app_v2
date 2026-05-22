@@ -1,0 +1,9 @@
+[
+  { "order": 1, "title": "Первые слова", "description": "Базовая лексика A1: люди, предметы, действия", "cefrLevel": "A1", "iconName": "Sparkles", "color": "#33a3ff" },
+  { "order": 2, "title": "Семья и дом", "description": "Близкие, дом, повседневные вещи", "cefrLevel": "A1", "iconName": "Home", "color": "#22c55e" },
+  { "order": 3, "title": "Еда и напитки", "description": "Завтрак, обед, продукты", "cefrLevel": "A1", "iconName": "Utensils", "color": "#f97316" },
+  { "order": 4, "title": "Время и числа", "description": "Цифры, дни недели, часы", "cefrLevel": "A1", "iconName": "Clock", "color": "#eab308" },
+  { "order": 5, "title": "Глаголы и действия", "description": "Базовые глаголы и Present Simple", "cefrLevel": "A1", "iconName": "Zap", "color": "#a855f7" },
+  { "order": 6, "title": "Город и транспорт", "description": "Улица, магазин, дорога", "cefrLevel": "A2", "iconName": "MapPin", "color": "#06b6d4" },
+  { "order": 7, "title": "Работа и учёба", "description": "Профессии, школа, офис", "cefrLevel": "A2", "iconName": "Briefcase", "color": "#ec4899" }
+]

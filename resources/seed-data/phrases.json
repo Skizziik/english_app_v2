@@ -1,0 +1,25 @@
+[
+  { "english": "Hello!", "russian": "Привет!", "category": "greetings", "cefrLevel": "A1" },
+  { "english": "Good morning.", "russian": "Доброе утро.", "category": "greetings", "cefrLevel": "A1" },
+  { "english": "Good evening.", "russian": "Добрый вечер.", "category": "greetings", "cefrLevel": "A1" },
+  { "english": "How are you?", "russian": "Как дела?", "category": "greetings", "cefrLevel": "A1" },
+  { "english": "I'm fine, thank you.", "russian": "У меня всё хорошо, спасибо.", "category": "greetings", "cefrLevel": "A1" },
+  { "english": "What is your name?", "russian": "Как тебя зовут?", "category": "greetings", "cefrLevel": "A1" },
+  { "english": "My name is...", "russian": "Меня зовут...", "category": "greetings", "cefrLevel": "A1" },
+  { "english": "Nice to meet you.", "russian": "Приятно познакомиться.", "category": "greetings", "cefrLevel": "A1" },
+  { "english": "See you later.", "russian": "До встречи.", "category": "greetings", "cefrLevel": "A1" },
+  { "english": "Goodbye.", "russian": "До свидания.", "category": "greetings", "cefrLevel": "A1" },
+
+  { "english": "Excuse me.", "russian": "Извините.", "category": "travel", "cefrLevel": "A1" },
+  { "english": "Where is the toilet?", "russian": "Где туалет?", "category": "travel", "cefrLevel": "A1" },
+  { "english": "How much is it?", "russian": "Сколько это стоит?", "category": "shopping", "cefrLevel": "A1" },
+  { "english": "I would like coffee.", "russian": "Я бы хотел кофе.", "category": "restaurant", "cefrLevel": "A1" },
+  { "english": "The bill, please.", "russian": "Счёт, пожалуйста.", "category": "restaurant", "cefrLevel": "A1" },
+  { "english": "Can you help me?", "russian": "Можешь мне помочь?", "category": "help", "cefrLevel": "A1" },
+  { "english": "I don't understand.", "russian": "Я не понимаю.", "category": "help", "cefrLevel": "A1" },
+  { "english": "Speak slowly, please.", "russian": "Говори медленно, пожалуйста.", "category": "help", "cefrLevel": "A1" },
+  { "english": "What time is it?", "russian": "Который час?", "category": "time", "cefrLevel": "A1" },
+  { "english": "I am hungry.", "russian": "Я голодный.", "category": "emotions", "cefrLevel": "A1" },
+  { "english": "I am tired.", "russian": "Я устал.", "category": "emotions", "cefrLevel": "A1" },
+  { "english": "I love you.", "russian": "Я тебя люблю.", "category": "emotions", "cefrLevel": "A1" }
+]

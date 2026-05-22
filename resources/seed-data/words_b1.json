@@ -1,0 +1,12 @@
+[
+  { "english": "achieve", "russian": "достигать", "partOfSpeech": "verb", "cefrLevel": "B1", "ipa": "/əˈtʃiːv/", "frequencyRank": 500, "topic": "abstract", "exampleEn": "Achieve your goal.", "exampleRu": "Достигай цели." },
+  { "english": "decide", "russian": "решать", "partOfSpeech": "verb", "cefrLevel": "B1", "ipa": "/dɪˈsaɪd/", "frequencyRank": 501, "topic": "verbs", "exampleEn": "I decided to stay.", "exampleRu": "Я решил остаться." },
+  { "english": "improve", "russian": "улучшать", "partOfSpeech": "verb", "cefrLevel": "B1", "ipa": "/ɪmˈpruːv/", "frequencyRank": 502, "topic": "verbs", "exampleEn": "Improve your skills.", "exampleRu": "Улучшай навыки." },
+  { "english": "develop", "russian": "развивать", "partOfSpeech": "verb", "cefrLevel": "B1", "ipa": "/dɪˈvɛləp/", "frequencyRank": 503, "topic": "verbs", "exampleEn": "Develop a plan.", "exampleRu": "Разработай план." },
+  { "english": "manage", "russian": "управлять", "partOfSpeech": "verb", "cefrLevel": "B1", "ipa": "/ˈmænɪdʒ/", "frequencyRank": 504, "topic": "work", "exampleEn": "Manage a team.", "exampleRu": "Руководить командой." },
+  { "english": "challenge", "russian": "вызов", "partOfSpeech": "noun", "cefrLevel": "B1", "ipa": "/ˈtʃælɪndʒ/", "frequencyRank": 505, "topic": "abstract", "exampleEn": "A real challenge.", "exampleRu": "Настоящий вызов." },
+  { "english": "opportunity", "russian": "возможность", "partOfSpeech": "noun", "cefrLevel": "B1", "ipa": "/ˌɒpərˈtuːnəti/", "frequencyRank": 506, "topic": "abstract", "exampleEn": "Great opportunity.", "exampleRu": "Отличная возможность." },
+  { "english": "experience", "russian": "опыт", "partOfSpeech": "noun", "cefrLevel": "B1", "ipa": "/ɪkˈspɪəriəns/", "frequencyRank": 507, "topic": "abstract", "exampleEn": "Years of experience.", "exampleRu": "Годы опыта." },
+  { "english": "consider", "russian": "рассматривать", "partOfSpeech": "verb", "cefrLevel": "B1", "ipa": "/kənˈsɪdər/", "frequencyRank": 508, "topic": "verbs", "exampleEn": "Consider the options.", "exampleRu": "Рассмотри варианты." },
+  { "english": "suggest", "russian": "предлагать", "partOfSpeech": "verb", "cefrLevel": "B1", "ipa": "/səˈdʒɛst/", "frequencyRank": 509, "topic": "verbs", "exampleEn": "I suggest tea.", "exampleRu": "Я предлагаю чай." }
+]

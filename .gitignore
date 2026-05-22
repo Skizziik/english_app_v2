@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+dist-electron/
+dist-react/
+build/Release/
+out/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Cache
+.cache/
+.parcel-cache
+.turbo
+.eslintcache
+
+# Drizzle
+drizzle/
+
+# Seed data is committed - keep it
+
+# Electron builder
+release/
+*.dmg
+*.zip
+*.exe
+*.AppImage
+
+# OS
+Thumbs.db
+.DS_Store

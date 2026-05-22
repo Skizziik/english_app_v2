@@ -1,0 +1,5 @@
+[
+  { "english": "acknowledge", "russian": "признавать", "partOfSpeech": "verb", "cefrLevel": "B2", "ipa": "/əkˈnɒlɪdʒ/", "frequencyRank": 1000, "topic": "abstract", "exampleEn": "Acknowledge the truth.", "exampleRu": "Признай правду." },
+  { "english": "consequence", "russian": "последствие", "partOfSpeech": "noun", "cefrLevel": "B2", "ipa": "/ˈkɒnsɪkwəns/", "frequencyRank": 1001, "topic": "abstract", "exampleEn": "Serious consequences.", "exampleRu": "Серьёзные последствия." },
+  { "english": "establish", "russian": "устанавливать", "partOfSpeech": "verb", "cefrLevel": "B2", "ipa": "/ɪˈstæblɪʃ/", "frequencyRank": 1002, "topic": "verbs", "exampleEn": "Establish a routine.", "exampleRu": "Установи привычку." }
+]

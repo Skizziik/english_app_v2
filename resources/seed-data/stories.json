@@ -1,0 +1,30 @@
+[
+  {
+    "title": "My morning",
+    "cefrLevel": "A1",
+    "contentEn": "I wake up at seven. I drink water and go to the kitchen. My mother is there. She makes tea. I eat bread and an apple. My father reads a book. We are happy. Then I go to school. School is good. I see my friends. We play and we learn. I am a student.",
+    "contentRu": "Я просыпаюсь в семь. Я пью воду и иду на кухню. Моя мама там. Она делает чай. Я ем хлеб и яблоко. Мой папа читает книгу. Мы счастливы. Затем я иду в школу. Школа это хорошо. Я вижу друзей. Мы играем и учимся. Я студент.",
+    "topic": "daily"
+  },
+  {
+    "title": "At the shop",
+    "cefrLevel": "A1",
+    "contentEn": "I go to the shop. I want milk and bread. The shop is new. I see a man. He is a friend. We say hello. I take milk. I take bread. I take an apple. I pay money. Goodbye, friend. I go home. At home I eat bread with milk.",
+    "contentRu": "Я иду в магазин. Я хочу молоко и хлеб. Магазин новый. Я вижу мужчину. Он друг. Мы здороваемся. Я беру молоко. Я беру хлеб. Я беру яблоко. Я плачу деньги. Пока, друг. Я иду домой. Дома я ем хлеб с молоком.",
+    "topic": "shopping"
+  },
+  {
+    "title": "My family",
+    "cefrLevel": "A1",
+    "contentEn": "My family is small. We are four people. My mother is a teacher. My father works in an office. I have one sister. Her name is Lily. She is six. We have a dog. The dog is black. We love our home. Our home is not big, but it is warm. We are happy together.",
+    "contentRu": "Моя семья маленькая. Нас четверо. Моя мама учительница. Папа работает в офисе. У меня одна сестра. Её зовут Лили. Ей шесть. У нас есть собака. Собака чёрная. Мы любим наш дом. Наш дом не большой, но тёплый. Мы счастливы вместе.",
+    "topic": "family"
+  },
+  {
+    "title": "A trip to the park",
+    "cefrLevel": "A2",
+    "contentEn": "On Saturday morning we went to the park. The weather was warm and sunny. My sister played with our dog. My father bought ice cream for everyone. I sat on a bench and read a book about animals. We saw many flowers and big trees. After two hours we were tired but happy. We went home and had a nice dinner.",
+    "contentRu": "В субботу утром мы пошли в парк. Погода была тёплой и солнечной. Моя сестра играла с нашей собакой. Папа купил мороженое всем. Я сел на скамейку и читал книгу о животных. Мы видели много цветов и большие деревья. Через два часа мы устали, но были счастливы. Мы пошли домой и поужинали.",
+    "topic": "leisure"
+  }
+]
