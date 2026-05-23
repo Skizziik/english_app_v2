@@ -1904,5 +1904,1130 @@
       "WordBank",
       "Matching"
     ]
+  },
+  {
+    "unitOrder": 4,
+    "order": 15,
+    "title": "Time 15",
+    "description": "Слова темы: time (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "always",
+      "never",
+      "often",
+      "sometimes",
+      "usually"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 7,
+    "title": "Shopping 7",
+    "description": "Слова темы: shopping (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "money",
+      "price",
+      "bargain",
+      "receipt",
+      "discount",
+      "queue"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 8,
+    "title": "Shopping 8",
+    "description": "Слова темы: shopping (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "afford",
+      "exchange",
+      "size",
+      "try on",
+      "customer",
+      "refund"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 9,
+    "title": "Shopping 9",
+    "description": "Слова темы: shopping (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "checkout",
+      "shopping cart",
+      "label",
+      "expensive",
+      "cheap",
+      "sale"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 10,
+    "title": "Shopping 10",
+    "description": "Слова темы: shopping (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "fitting room",
+      "assistant",
+      "brand",
+      "purchase",
+      "display",
+      "trolley"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 11,
+    "title": "Shopping 11",
+    "description": "Слова темы: shopping (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "price tag",
+      "browse",
+      "cashier"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 14,
+    "title": "Verbs 14",
+    "description": "Слова темы: verbs (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "buy",
+      "sell",
+      "wait",
+      "lose",
+      "remember",
+      "forget"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 15,
+    "title": "Verbs 15",
+    "description": "Слова темы: verbs (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "understand",
+      "explain",
+      "teach",
+      "begin",
+      "call",
+      "cry"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 16,
+    "title": "Verbs 16",
+    "description": "Слова темы: verbs (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "finish",
+      "jump",
+      "laugh",
+      "talk",
+      "work"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 12,
+    "title": "Travel 12",
+    "description": "Слова темы: travel (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "travel",
+      "suitcase",
+      "passport",
+      "boarding pass",
+      "delay",
+      "reservation"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 13,
+    "title": "Travel 13",
+    "description": "Слова темы: travel (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "guidebook",
+      "souvenir",
+      "itinerary",
+      "currency",
+      "landmark",
+      "accommodation"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 14,
+    "title": "Travel 14",
+    "description": "Слова темы: travel (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "departure",
+      "arrival",
+      "luggage",
+      "tourist",
+      "excursion",
+      "backpack"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 15,
+    "title": "Travel 15",
+    "description": "Слова темы: travel (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "ferry",
+      "hostel",
+      "cruise",
+      "adventure",
+      "destination",
+      "sightseeing"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 16,
+    "title": "Travel 16",
+    "description": "Слова темы: travel (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "vacation",
+      "journey",
+      "customs",
+      "carry-on",
+      "check-in",
+      "depart"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 4,
+    "title": "Work 4",
+    "description": "Слова темы: work (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "student",
+      "office",
+      "colleague",
+      "manager",
+      "meeting",
+      "deadline"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 5,
+    "title": "Work 5",
+    "description": "Слова темы: work (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "contract",
+      "promotion",
+      "resign",
+      "salary",
+      "overtime",
+      "shift"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 6,
+    "title": "Work 6",
+    "description": "Слова темы: work (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "task",
+      "client",
+      "interview",
+      "training",
+      "report",
+      "department"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 7,
+    "title": "Work 7",
+    "description": "Слова темы: work (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "presentation",
+      "employer",
+      "employee",
+      "bonus",
+      "coworker",
+      "position"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 8,
+    "title": "Work 8",
+    "description": "Слова темы: work (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "responsibility",
+      "team",
+      "workload"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 3,
+    "order": 9,
+    "title": "Food 9",
+    "description": "Слова темы: food (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "appetizer",
+      "beverage",
+      "bill",
+      "boil",
+      "buffet",
+      "cuisine"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 3,
+    "order": 10,
+    "title": "Food 10",
+    "description": "Слова темы: food (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "delicious",
+      "dessert",
+      "fry",
+      "grill",
+      "ingredient",
+      "menu"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 3,
+    "order": 11,
+    "title": "Food 11",
+    "description": "Слова темы: food (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "microwave",
+      "peel",
+      "recipe",
+      "roast",
+      "sauce",
+      "slice"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 3,
+    "order": 12,
+    "title": "Food 12",
+    "description": "Слова темы: food (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "spicy",
+      "stir",
+      "taste",
+      "tip",
+      "toast",
+      "vegetarian"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 3,
+    "order": 13,
+    "title": "Food 13",
+    "description": "Слова темы: food (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "whisk",
+      "bake",
+      "cutlery"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 9,
+    "title": "Health 9",
+    "description": "Слова темы: health (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "headache",
+      "cough",
+      "fever",
+      "dizzy",
+      "prescription",
+      "appointment"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 10,
+    "title": "Health 10",
+    "description": "Слова темы: health (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "symptom",
+      "recover",
+      "injury",
+      "examine",
+      "medicine",
+      "allergic"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 11,
+    "title": "Health 11",
+    "description": "Слова темы: health (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "painful",
+      "bandage",
+      "thermometer",
+      "vaccine",
+      "swollen",
+      "diet"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 12,
+    "title": "Health 12",
+    "description": "Слова темы: health (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "exercise",
+      "fatigue",
+      "nausea",
+      "clinic",
+      "stomachache",
+      "infection"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 17,
+    "title": "Phrasal_verbs 17",
+    "description": "Слова темы: phrasal_verbs (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "give up",
+      "turn on",
+      "look after",
+      "find out",
+      "put off",
+      "take off"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 18,
+    "title": "Phrasal_verbs 18",
+    "description": "Слова темы: phrasal_verbs (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "run out of",
+      "pick up",
+      "set up",
+      "break down",
+      "calm down",
+      "fill in"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 19,
+    "title": "Phrasal_verbs 19",
+    "description": "Слова темы: phrasal_verbs (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "get along",
+      "hang up",
+      "look for",
+      "pay back",
+      "show up",
+      "take after"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 20,
+    "title": "Phrasal_verbs 20",
+    "description": "Слова темы: phrasal_verbs (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "throw away",
+      "turn down",
+      "wake up",
+      "write down",
+      "bring up",
+      "cut off"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 21,
+    "title": "Feelings 21",
+    "description": "Слова темы: feelings (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "anxious",
+      "confused",
+      "disappointed",
+      "embarrassed",
+      "frustrated",
+      "grateful"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 22,
+    "title": "Feelings 22",
+    "description": "Слова темы: feelings (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "guilty",
+      "hopeful",
+      "jealous",
+      "nervous",
+      "relieved",
+      "shocked"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 23,
+    "title": "Feelings 23",
+    "description": "Слова темы: feelings (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "suspicious",
+      "thankful",
+      "upset",
+      "worried",
+      "curious"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 24,
+    "title": "Adjectives 24",
+    "description": "Слова темы: adjectives (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "brave",
+      "cheerful",
+      "clever",
+      "curly",
+      "generous",
+      "gentle"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 25,
+    "title": "Adjectives 25",
+    "description": "Слова темы: adjectives (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "honest",
+      "kind",
+      "lazy",
+      "patient",
+      "polite",
+      "rude"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 26,
+    "title": "Adjectives 26",
+    "description": "Слова темы: adjectives (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "silly",
+      "tidy",
+      "wise",
+      "friendly",
+      "grumpy",
+      "helpful"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 27,
+    "title": "Adjectives 27",
+    "description": "Слова темы: adjectives (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "modern",
+      "narrow",
+      "strict",
+      "thick"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 13,
+    "title": "Technology 13",
+    "description": "Слова темы: technology (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "keyboard",
+      "screen",
+      "download",
+      "upload",
+      "password",
+      "browser"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 14,
+    "title": "Technology 14",
+    "description": "Слова темы: technology (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "wireless",
+      "battery",
+      "charger",
+      "update",
+      "folder",
+      "printer"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 15,
+    "title": "Technology 15",
+    "description": "Слова темы: technology (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "speaker",
+      "headphones",
+      "software",
+      "hardware",
+      "network",
+      "virus"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 16,
+    "title": "Education 16",
+    "description": "Слова темы: education (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "lesson",
+      "homework",
+      "subject",
+      "exam",
+      "pupil",
+      "classroom"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 17,
+    "title": "Education 17",
+    "description": "Слова темы: education (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "grade",
+      "attend",
+      "revise",
+      "project",
+      "uniform",
+      "break"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 18,
+    "title": "Education 18",
+    "description": "Слова темы: education (A2)",
+    "type": "vocabulary",
+    "cefrLevel": "A2",
+    "estimatedMinutes": 4,
+    "xpReward": 14,
+    "wordEnglish": [
+      "term",
+      "mark",
+      "practice",
+      "schedule"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
   }
 ]
