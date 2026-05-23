@@ -33,11 +33,23 @@ export default function Settings() {
 
       <Section title="Озвучка">
         <SelectRow
-          label="Голос macOS"
-          value={settings.preferredVoice}
-          onChange={(v) => settings.update({ preferredVoice: v })}
-          options={voices.map((v) => ({ value: v.id, label: v.name }))}
+          label="Источник озвучки"
+          value={settings.ttsProvider}
+          onChange={(v) => settings.update({ ttsProvider: v as any })}
+          options={[
+            { value: 'voxtral', label: 'Voxtral (Mistral AI, лучшее качество)' },
+            { value: 'macos_say', label: 'macOS say (быстро, без интернета)' },
+            { value: 'web_speech', label: 'Web Speech API (запасной)' },
+          ]}
         />
+        {settings.ttsProvider === 'macos_say' && (
+          <SelectRow
+            label="Голос macOS"
+            value={settings.preferredVoice}
+            onChange={(v) => settings.update({ preferredVoice: v })}
+            options={voices.map((v) => ({ value: v.id, label: v.name }))}
+          />
+        )}
         <SliderRow
           label="Скорость речи"
           value={settings.voiceRate}
@@ -45,11 +57,6 @@ export default function Settings() {
           max={280}
           step={10}
           onChange={(v) => settings.update({ voiceRate: v })}
-        />
-        <ToggleRow
-          label="Использовать macOS say"
-          value={settings.useMacSay}
-          onChange={(v) => settings.update({ useMacSay: v })}
         />
         <button className="btn btn-secondary mt-2" onClick={() => speak('Hello! This is a test of the LinguaForge voice.')}>
           Проверить голос

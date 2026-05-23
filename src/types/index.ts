@@ -47,11 +47,11 @@ export interface Word {
 
 export interface Unit {
   id: number;
-  order_idx: number;
+  orderIdx: number;
   title: string;
   description: string | null;
-  cefr_level: CefrLevel;
-  icon_name: string | null;
+  cefrLevel: CefrLevel;
+  iconName: string | null;
   color: string | null;
   totalLessons?: number;
   completedLessons?: number;
@@ -59,15 +59,15 @@ export interface Unit {
 
 export interface Lesson {
   id: number;
-  unit_id: number;
-  order_idx: number;
+  unitId: number;
+  orderIdx: number;
   title: string;
   description: string | null;
   type: 'vocabulary' | 'grammar' | 'listening' | 'speaking' | 'review' | 'story';
-  cefr_level: CefrLevel;
-  estimated_minutes: number;
-  xp_reward: number;
-  word_ids: string | null;
+  cefrLevel: CefrLevel;
+  estimatedMinutes: number;
+  xpReward: number;
+  wordIds: string | null;
   exercises: string | null;
   words?: Word[];
   progress?: { status: 'locked' | 'available' | 'in_progress' | 'completed'; score: number } | null;
@@ -75,24 +75,24 @@ export interface Lesson {
 
 export interface GrammarTopic {
   id: number;
-  order_idx: number;
-  cefr_level: CefrLevel;
+  orderIdx: number;
+  cefrLevel: CefrLevel;
   title: string;
-  title_ru: string;
+  titleRu: string;
   explanation: string;
-  examples_json: string | null;
+  examplesJson: string | null;
 }
 
 export interface Story {
   id: number;
   title: string;
-  cefr_level: CefrLevel;
-  content_en: string;
-  content_ru: string;
-  word_count: number;
-  estimated_read_minutes: number;
+  cefrLevel: CefrLevel;
+  contentEn: string;
+  contentRu: string;
+  wordCount: number;
+  estimatedReadMinutes: number;
   topic: string | null;
-  xp_reward: number;
+  xpReward: number;
 }
 
 export interface DueCard {

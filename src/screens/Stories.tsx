@@ -24,15 +24,15 @@ export default function Stories() {
             className="card p-5 text-left hover:border-brand-500 transition"
           >
             <div className="flex justify-between mb-2">
-              <span className="chip">CEFR {s.cefr_level}</span>
+              <span className="chip">CEFR {s.cefrLevel}</span>
               <span className="chip flex items-center gap-1">
-                <Clock size={12} /> {s.estimated_read_minutes} мин
+                <Clock size={12} /> {s.estimatedReadMinutes} мин
               </span>
             </div>
             <h3 className="text-xl font-bold">{s.title}</h3>
-            <p className="text-sm text-ink-400 mt-2 line-clamp-2">{s.content_en.slice(0, 120)}...</p>
+            <p className="text-sm text-ink-400 mt-2 line-clamp-2">{s.contentEn.slice(0, 120)}...</p>
             <div className="mt-3 flex items-center gap-2 text-xs text-yellow-400">
-              <Star size={12} /> +{s.xp_reward} XP
+              <Star size={12} /> +{s.xpReward} XP
             </div>
           </button>
         ))}

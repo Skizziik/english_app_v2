@@ -20,6 +20,12 @@ const api = {
       ipcRenderer.invoke('mistral:explainWord', payload) as Promise<string>,
     validateCloze: (payload: { sentence: string; userWord: string }) =>
       ipcRenderer.invoke('mistral:validateCloze', payload) as Promise<unknown>,
+    tts: (payload: { text: string; voiceId?: string }) =>
+      ipcRenderer.invoke('mistral:tts', payload) as Promise<string>,
+    listVoices: () =>
+      ipcRenderer.invoke('mistral:listVoices') as Promise<
+        Array<{ id: string; name: string; description: string }>
+      >,
   },
   settings: {
     get: () => ipcRenderer.invoke('settings:get') as Promise<Record<string, unknown>>,

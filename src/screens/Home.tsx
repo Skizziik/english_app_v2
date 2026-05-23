@@ -69,7 +69,7 @@ export default function Home() {
                 className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg"
                 style={{ background: u.color || '#33a3ff' }}
               >
-                {u.order_idx}
+                {u.orderIdx}
               </div>
               <div className="flex-1 text-left">
                 <div className="font-bold">{u.title}</div>
@@ -108,7 +108,7 @@ export default function Home() {
                         <div className="font-semibold text-sm">{l.title}</div>
                         <div className="text-xs text-ink-400 mt-0.5 line-clamp-1">{l.description}</div>
                       </div>
-                      <div className="text-xs text-ink-500">+{l.xp_reward} XP</div>
+                      <div className="text-xs text-ink-500">+{l.xpReward} XP</div>
                     </button>
                   );
                 })}

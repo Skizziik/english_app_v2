@@ -1,12 +1,25 @@
 import { ipcMain } from 'electron';
 import { createHash } from 'node:crypto';
-import { Mistral } from '@mistralai/mistralai';
 import { sqlite } from '../db';
 import { getSettings } from '../lib/settings';
 
 const DEFAULT_KEY = 'omuPDQIstHg8D0ZLilaqQPO1jpGJTze4';
 
-function getClient(): Mistral {
+// We need a *native* dynamic import here because the SDK is ESM-only,
+// and TypeScript's CommonJS compilation otherwise rewrites import() into require().
+const nativeImport = new Function('m', 'return import(m)') as (m: string) => Promise<any>;
+
+let MistralCtor: any | null = null;
+async function loadMistral(): Promise<any> {
+  if (MistralCtor) return MistralCtor;
+  const mod: any = await nativeImport('@mistralai/mistralai');
+  MistralCtor = mod.Mistral ?? mod.default?.Mistral ?? mod.default;
+  if (!MistralCtor) throw new Error('Failed to resolve Mistral export');
+  return MistralCtor;
+}
+
+async function getClient(): Promise<any> {
+  const Mistral = await loadMistral();
   const key = process.env.MISTRAL_API_KEY || getSettings().mistralApiKey || DEFAULT_KEY;
   return new Mistral({ apiKey: key });
 }
@@ -14,6 +27,7 @@ function getClient(): Mistral {
 const MODELS = {
   fast: 'mistral-small-latest',
   smart: 'mistral-large-latest',
+  tts: 'voxtral-mini-latest',
 } as const;
 
 let lastCallAt = 0;
@@ -67,7 +81,7 @@ async function complete(model: string, messages: Array<{ role: string; content: 
   if (cached) return cached;
 
   await rateLimit();
-  const client = getClient();
+  const client = await getClient();
   const res = await client.chat.complete({
     model,
     messages: messages as any,
@@ -129,6 +143,47 @@ Return ONLY valid JSON: { "valid": true/false, "suggestion": "...", "explanation
       return JSON.parse(cleaned);
     } catch {
       return { valid: false, explanation: 'Не удалось разобрать ответ AI' };
+    }
+  });
+
+  // Voxtral TTS via Mistral. Returns base64-encoded mp3.
+  ipcMain.handle('mistral:tts', async (_e, payload: { text: string; voiceId?: string }) => {
+    const trimmed = payload.text.slice(0, 1000);
+    const key = cacheKey('voxtral|' + (payload.voiceId ?? 'default'), trimmed);
+    const cached = readCache(key);
+    if (cached) return cached;
+
+    await rateLimit();
+    const client = await getClient();
+    const req: any = {
+      model: MODELS.tts,
+      input: trimmed,
+      responseFormat: 'mp3' as any,
+    };
+    if (payload.voiceId) req.voiceId = payload.voiceId;
+
+    const result: any = await client.audio.speech.complete(req);
+    const audioData: string | undefined = result?.audioData ?? result?.audio_data;
+    if (!audioData || typeof audioData !== 'string') {
+      throw new Error('Voxtral: no audio in response');
+    }
+    writeCache(key, trimmed, audioData, 'voxtral', 7);
+    return audioData;
+  });
+
+  ipcMain.handle('mistral:listVoices', async () => {
+    try {
+      const client = await getClient();
+      const list: any = await client.audio.voices.list({});
+      const items = list?.data ?? list?.voices ?? [];
+      return items.map((v: any) => ({
+        id: v.id ?? v.voice_id ?? v.name,
+        name: v.name ?? v.id,
+        description: v.description ?? '',
+      }));
+    } catch (err: any) {
+      console.warn('[mistral:listVoices]', err.message);
+      return [];
     }
   });
 }

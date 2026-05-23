@@ -22,8 +22,10 @@
     "lint": "eslint . --ext .ts,.tsx"
   },
   "dependencies": {
-    "@mistralai/mistralai": "^1.7.0",
+    "@mistralai/mistralai": "^2.2.1",
     "better-sqlite3": "^11.5.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "drizzle-orm": "^0.36.0",
     "framer-motion": "^11.11.0",
@@ -34,12 +36,10 @@
     "react-router-dom": "^7.0.0",
     "recharts": "^2.13.0",
     "sonner": "^1.7.0",
+    "tailwind-merge": "^2.5.0",
     "ts-fsrs": "^4.6.0",
     "zod": "^3.23.0",
-    "zustand": "^5.0.0",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^2.5.0",
-    "class-variance-authority": "^0.7.1"
+    "zustand": "^5.0.0"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.11",

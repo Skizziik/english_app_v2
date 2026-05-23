@@ -25,9 +25,9 @@ export default function Story() {
 
   async function markRead() {
     await window.api.stories.markRead(Number(id));
-    await addXp(story.xp_reward);
+    await addXp(story.xpReward);
     setMarked(true);
-    toast.success(`+${story.xp_reward} XP за прочитанный текст`);
+    toast.success(`+${story.xpReward} XP за прочитанный текст`);
   }
 
   async function onWordClick(word: string, sentence: string) {
@@ -46,8 +46,8 @@ export default function Story() {
 
   if (!story) return <div className="p-8 text-ink-400">Загрузка...</div>;
 
-  const sentences = story.content_en.split(/(?<=[.!?])\s+/);
-  const ruSentences = story.content_ru.split(/(?<=[.!?])\s+/);
+  const sentences = story.contentEn.split(/(?<=[.!?])\s+/);
+  const ruSentences = story.contentRu.split(/(?<=[.!?])\s+/);
 
   return (
     <div className="h-full flex">
@@ -57,13 +57,13 @@ export default function Story() {
         </button>
         <h1 className="text-3xl font-bold">{story.title}</h1>
         <div className="mt-2 flex gap-2">
-          <span className="chip">CEFR {story.cefr_level}</span>
-          <span className="chip">{story.word_count} слов</span>
-          <span className="chip">{story.estimated_read_minutes} мин</span>
+          <span className="chip">CEFR {story.cefrLevel}</span>
+          <span className="chip">{story.wordCount} слов</span>
+          <span className="chip">{story.estimatedReadMinutes} мин</span>
         </div>
 
         <div className="mt-4 flex gap-2">
-          <SpeakButton text={story.content_en} />
+          <SpeakButton text={story.contentEn} />
           <button className="btn btn-ghost text-sm" onClick={() => setShowRu(!showRu)}>
             {showRu ? <EyeOff size={16} /> : <Eye size={16} />} {showRu ? 'Скрыть перевод' : 'Показать перевод'}
           </button>
@@ -97,7 +97,7 @@ export default function Story() {
         <div className="mt-8">
           <button className="btn btn-primary" onClick={markRead} disabled={marked}>
             {marked ? <Check size={16} /> : null}
-            {marked ? 'Прочитано' : `Готово, +${story.xp_reward} XP`}
+            {marked ? 'Прочитано' : `Готово, +${story.xpReward} XP`}
           </button>
         </div>
       </div>

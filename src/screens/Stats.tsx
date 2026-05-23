@@ -79,12 +79,12 @@ function aggregateByDay(sessions: any[]) {
     map.set(key, { date: key, xp: 0, correct: 0 });
   }
   for (const s of sessions) {
-    const d = new Date(s.started_at * 1000);
+    const d = new Date(s.startedAt * 1000);
     const key = d.toISOString().slice(5, 10);
     const cur = map.get(key);
     if (cur) {
-      cur.xp += s.xp_earned ?? 0;
-      cur.correct += s.correct_answers ?? 0;
+      cur.xp += s.xpEarned ?? 0;
+      cur.correct += s.correctAnswers ?? 0;
     }
   }
   return Array.from(map.values());

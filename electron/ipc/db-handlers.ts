@@ -1,16 +1,35 @@
 import { ipcMain } from 'electron';
-import { and, eq, gt, isNull, like, lt, or, sql, desc, asc } from 'drizzle-orm';
-import { db, sqlite } from '../db';
-import * as schema from '../db/schema';
+import { sqlite } from '../db';
 import { reviewCard, RatingValue, schedulingFromState } from '../lib/srs';
 
 function todayIso(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
-function getCurrentUser() {
+function snakeToCamel(s: string): string {
+  return s.replace(/_([a-z0-9])/g, (_, c) => c.toUpperCase());
+}
+
+function camelizeRow<T = any>(row: any): T | null {
+  if (!row || typeof row !== 'object') return row;
+  const out: any = {};
+  for (const [k, v] of Object.entries(row)) {
+    out[snakeToCamel(k)] = v;
+  }
+  return out as T;
+}
+
+function camelizeRows<T = any>(rows: any[]): T[] {
+  return rows.map((r) => camelizeRow<T>(r) as T);
+}
+
+function getCurrentUserRaw(): any | null {
   const rows = sqlite().prepare('SELECT * FROM users LIMIT 1').all() as any[];
   return rows[0] ?? null;
+}
+
+function getCurrentUser() {
+  return camelizeRow(getCurrentUserRaw());
 }
 
 function ensureStats(userId: number) {
@@ -20,6 +39,14 @@ function ensureStats(userId: number) {
     return sqlite().prepare('SELECT * FROM user_stats WHERE user_id = ?').get(userId);
   }
   return row;
+}
+
+function readUser(id: number) {
+  return camelizeRow(sqlite().prepare('SELECT * FROM users WHERE id = ?').get(id));
+}
+
+function readStats(userId: number) {
+  return camelizeRow(sqlite().prepare('SELECT * FROM user_stats WHERE user_id = ?').get(userId));
 }
 
 export function registerDbHandlers(): void {
@@ -45,11 +72,11 @@ export function registerDbHandlers(): void {
         lastActiveAt: now,
       });
     ensureStats(Number(info.lastInsertRowid));
-    return sqlite().prepare('SELECT * FROM users WHERE id = ?').get(info.lastInsertRowid);
+    return readUser(Number(info.lastInsertRowid));
   });
 
   ipcMain.handle('user:update', (_e, patch: any) => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return null;
     const fields: string[] = [];
     const values: any = { id: user.id };
@@ -73,37 +100,39 @@ export function registerDbHandlers(): void {
       fields.push('motivations = @motivations');
       values.motivations = JSON.stringify(patch.motivations);
     }
-    if (fields.length === 0) return user;
-    sqlite().prepare(`UPDATE users SET ${fields.join(', ')} WHERE id = @id`).run(values);
-    return sqlite().prepare('SELECT * FROM users WHERE id = ?').get(user.id);
+    if (fields.length > 0) {
+      sqlite().prepare(`UPDATE users SET ${fields.join(', ')} WHERE id = @id`).run(values);
+    }
+    return readUser(user.id);
   });
 
   ipcMain.handle('user:completeOnboarding', (_e) => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return null;
     sqlite().prepare('UPDATE users SET onboarding_completed = 1 WHERE id = ?').run(user.id);
-    return sqlite().prepare('SELECT * FROM users WHERE id = ?').get(user.id);
+    return readUser(user.id);
   });
 
   // ===== stats =====
   ipcMain.handle('stats:get', () => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return null;
-    return ensureStats(user.id);
+    ensureStats(user.id);
+    return readStats(user.id);
   });
 
   ipcMain.handle('stats:addXp', (_e, amount: number) => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return null;
     ensureStats(user.id);
     sqlite()
       .prepare('UPDATE user_stats SET total_xp = total_xp + ?, weekly_xp = weekly_xp + ? WHERE user_id = ?')
       .run(amount, amount, user.id);
-    return sqlite().prepare('SELECT * FROM user_stats WHERE user_id = ?').get(user.id);
+    return readStats(user.id);
   });
 
   ipcMain.handle('stats:loseHeart', () => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return null;
     ensureStats(user.id);
     const stats = sqlite().prepare('SELECT hearts FROM user_stats WHERE user_id = ?').get(user.id) as any;
@@ -112,26 +141,26 @@ export function registerDbHandlers(): void {
     sqlite()
       .prepare('UPDATE user_stats SET hearts = ?, hearts_refill_at = ? WHERE user_id = ?')
       .run(newHearts, refillAt, user.id);
-    return sqlite().prepare('SELECT * FROM user_stats WHERE user_id = ?').get(user.id);
+    return readStats(user.id);
   });
 
   ipcMain.handle('stats:refillHearts', () => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return null;
     sqlite()
       .prepare('UPDATE user_stats SET hearts = 5, hearts_refill_at = NULL WHERE user_id = ?')
       .run(user.id);
-    return sqlite().prepare('SELECT * FROM user_stats WHERE user_id = ?').get(user.id);
+    return readStats(user.id);
   });
 
   ipcMain.handle('stats:bumpStreak', () => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return null;
     ensureStats(user.id);
     const stats = sqlite().prepare('SELECT * FROM user_stats WHERE user_id = ?').get(user.id) as any;
     const today = todayIso();
     const last = stats.last_streak_date as string | null;
-    if (last === today) return stats;
+    if (last === today) return readStats(user.id);
     let newStreak = 1;
     if (last) {
       const lastD = new Date(last + 'T00:00:00Z').getTime();
@@ -145,7 +174,7 @@ export function registerDbHandlers(): void {
     sqlite()
       .prepare('UPDATE user_stats SET current_streak = ?, longest_streak = ?, last_streak_date = ? WHERE user_id = ?')
       .run(newStreak, longest, today, user.id);
-    return sqlite().prepare('SELECT * FROM user_stats WHERE user_id = ?').get(user.id);
+    return readStats(user.id);
   });
 
   // ===== words =====
@@ -164,51 +193,57 @@ export function registerDbHandlers(): void {
     if (filter.limit) {
       sqlStr += ` LIMIT ${Number(filter.limit)}`;
     }
-    return sqlite().prepare(sqlStr).all(params);
+    return camelizeRows(sqlite().prepare(sqlStr).all(params) as any[]);
   });
 
   ipcMain.handle('words:get', (_e, id: number) => {
-    return sqlite().prepare('SELECT * FROM words WHERE id = ?').get(id);
+    return camelizeRow(sqlite().prepare('SELECT * FROM words WHERE id = ?').get(id));
   });
 
   ipcMain.handle('words:search', (_e, q: string) => {
     const term = `%${q.toLowerCase()}%`;
-    return sqlite()
+    const rows = sqlite()
       .prepare(
         `SELECT * FROM words WHERE LOWER(english) LIKE ? OR LOWER(russian) LIKE ? ORDER BY frequency_rank ASC LIMIT 50`,
       )
-      .all(term, term);
+      .all(term, term) as any[];
+    return camelizeRows(rows);
   });
 
   // ===== lessons =====
   ipcMain.handle('lessons:listUnits', () => {
-    const user = getCurrentUser();
-    const units = sqlite().prepare('SELECT * FROM units ORDER BY order_idx ASC').all();
-    if (!user) return units;
+    const user = getCurrentUserRaw();
+    const units = sqlite().prepare('SELECT * FROM units ORDER BY order_idx ASC').all() as any[];
     return units.map((u: any) => {
       const total = (sqlite().prepare('SELECT COUNT(*) AS c FROM lessons WHERE unit_id = ?').get(u.id) as any).c;
-      const done = (
-        sqlite()
-          .prepare(
-            `SELECT COUNT(*) AS c FROM user_lesson_progress p JOIN lessons l ON l.id = p.lesson_id WHERE l.unit_id = ? AND p.user_id = ? AND p.status = 'completed'`,
-          )
-          .get(u.id, user.id) as any
-      ).c;
-      return { ...u, totalLessons: total, completedLessons: done };
+      let done = 0;
+      if (user) {
+        done = (
+          sqlite()
+            .prepare(
+              `SELECT COUNT(*) AS c FROM user_lesson_progress p JOIN lessons l ON l.id = p.lesson_id WHERE l.unit_id = ? AND p.user_id = ? AND p.status = 'completed'`,
+            )
+            .get(u.id, user.id) as any
+        ).c;
+      }
+      return { ...camelizeRow(u), totalLessons: total, completedLessons: done };
     });
   });
 
   ipcMain.handle('lessons:listForUnit', (_e, unitId: number) => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     const rows = sqlite()
       .prepare('SELECT * FROM lessons WHERE unit_id = ? ORDER BY order_idx ASC')
-      .all(unitId);
-    if (!user) return rows;
+      .all(unitId) as any[];
     return rows.map((l: any) => {
-      const p = sqlite()
-        .prepare('SELECT * FROM user_lesson_progress WHERE user_id = ? AND lesson_id = ?')
-        .get(user.id, l.id);
-      return { ...l, progress: p ?? null };
+      let progress = null as any;
+      if (user) {
+        const p = sqlite()
+          .prepare('SELECT * FROM user_lesson_progress WHERE user_id = ? AND lesson_id = ?')
+          .get(user.id, l.id);
+        progress = p ? camelizeRow(p) : null;
+      }
+      return { ...camelizeRow(l), progress };
     });
   });
 
@@ -216,16 +251,16 @@ export function registerDbHandlers(): void {
     const l = sqlite().prepare('SELECT * FROM lessons WHERE id = ?').get(id) as any;
     if (!l) return null;
     const wordIds: number[] = JSON.parse(l.word_ids || '[]');
-    const words = wordIds.length
-      ? sqlite()
+    const wordsRaw = wordIds.length
+      ? (sqlite()
           .prepare(`SELECT * FROM words WHERE id IN (${wordIds.map(() => '?').join(',')})`)
-          .all(...wordIds)
+          .all(...wordIds) as any[])
       : [];
-    return { ...l, words };
+    return { ...camelizeRow(l), words: camelizeRows(wordsRaw) };
   });
 
   ipcMain.handle('lessons:complete', (_e, payload: { lessonId: number; score: number; mistakes: number; timeSpent: number; xp: number }) => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return null;
     const existing = sqlite()
       .prepare('SELECT * FROM user_lesson_progress WHERE user_id = ? AND lesson_id = ?')
@@ -244,20 +279,30 @@ export function registerDbHandlers(): void {
         )
         .run(user.id, payload.lessonId, payload.score, payload.mistakes, payload.timeSpent, now);
     }
-    return sqlite()
-      .prepare('SELECT * FROM user_lesson_progress WHERE user_id = ? AND lesson_id = ?')
-      .get(user.id, payload.lessonId);
+    return camelizeRow(
+      sqlite()
+        .prepare('SELECT * FROM user_lesson_progress WHERE user_id = ? AND lesson_id = ?')
+        .get(user.id, payload.lessonId),
+    );
   });
 
   // ===== grammar =====
-  ipcMain.handle('grammar:list', () => sqlite().prepare('SELECT * FROM grammar_topics ORDER BY order_idx ASC').all());
-  ipcMain.handle('grammar:get', (_e, id: number) => sqlite().prepare('SELECT * FROM grammar_topics WHERE id = ?').get(id));
+  ipcMain.handle('grammar:list', () =>
+    camelizeRows(sqlite().prepare('SELECT * FROM grammar_topics ORDER BY order_idx ASC').all() as any[]),
+  );
+  ipcMain.handle('grammar:get', (_e, id: number) =>
+    camelizeRow(sqlite().prepare('SELECT * FROM grammar_topics WHERE id = ?').get(id)),
+  );
 
   // ===== stories =====
-  ipcMain.handle('stories:list', () => sqlite().prepare('SELECT * FROM stories ORDER BY cefr_level ASC, id ASC').all());
-  ipcMain.handle('stories:get', (_e, id: number) => sqlite().prepare('SELECT * FROM stories WHERE id = ?').get(id));
+  ipcMain.handle('stories:list', () =>
+    camelizeRows(sqlite().prepare('SELECT * FROM stories ORDER BY cefr_level ASC, id ASC').all() as any[]),
+  );
+  ipcMain.handle('stories:get', (_e, id: number) =>
+    camelizeRow(sqlite().prepare('SELECT * FROM stories WHERE id = ?').get(id)),
+  );
   ipcMain.handle('stories:markRead', (_e, id: number) => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return null;
     const now = Math.floor(Date.now() / 1000);
     sqlite()
@@ -270,20 +315,23 @@ export function registerDbHandlers(): void {
   });
 
   // ===== achievements =====
-  ipcMain.handle('achievements:list', () => sqlite().prepare('SELECT * FROM achievements ORDER BY id ASC').all());
+  ipcMain.handle('achievements:list', () =>
+    camelizeRows(sqlite().prepare('SELECT * FROM achievements ORDER BY id ASC').all() as any[]),
+  );
   ipcMain.handle('achievements:unlocked', () => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return [];
-    return sqlite()
+    const rows = sqlite()
       .prepare(
         `SELECT a.*, ua.unlocked_at FROM user_achievements ua JOIN achievements a ON a.id = ua.achievement_id WHERE ua.user_id = ?`,
       )
-      .all(user.id);
+      .all(user.id) as any[];
+    return camelizeRows(rows);
   });
 
   // ===== sessions =====
   ipcMain.handle('sessions:start', (_e, activityType: string) => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return -1;
     const now = Math.floor(Date.now() / 1000);
     const info = sqlite()
@@ -303,17 +351,18 @@ export function registerDbHandlers(): void {
   });
 
   ipcMain.handle('sessions:history', (_e, days: number) => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return [];
     const since = Math.floor(Date.now() / 1000) - days * 86400;
-    return sqlite()
+    const rows = sqlite()
       .prepare('SELECT * FROM study_sessions WHERE user_id = ? AND started_at >= ? ORDER BY started_at DESC')
-      .all(user.id, since);
+      .all(user.id, since) as any[];
+    return camelizeRows(rows);
   });
 
   // ===== SRS =====
   ipcMain.handle('srs:enqueueWords', (_e, wordIds: number[]) => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return 0;
     const now = Math.floor(Date.now() / 1000);
     const ins = sqlite().prepare(
@@ -334,17 +383,18 @@ export function registerDbHandlers(): void {
   });
 
   ipcMain.handle('srs:dueQueue', (_e, limit: number = 30) => {
-    const user = getCurrentUser();
+    const user = getCurrentUserRaw();
     if (!user) return [];
     const now = Math.floor(Date.now() / 1000);
-    return sqlite()
+    const rows = sqlite()
       .prepare(
         `SELECT uw.*, w.english, w.russian, w.ipa, w.example_en, w.example_ru, w.image_url, w.part_of_speech, w.cefr_level
          FROM user_words uw JOIN words w ON w.id = uw.word_id
          WHERE uw.user_id = ? AND (uw.due_date IS NULL OR uw.due_date <= ?)
-         ORDER BY uw.due_date ASC NULLS FIRST LIMIT ?`,
+         ORDER BY uw.due_date ASC LIMIT ?`,
       )
-      .all(user.id, now, limit);
+      .all(user.id, now, limit) as any[];
+    return camelizeRows(rows);
   });
 
   ipcMain.handle('srs:review', (_e, payload: { userWordId: number; rating: RatingValue }) => {

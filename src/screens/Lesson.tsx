@@ -103,7 +103,7 @@ export default function Lesson() {
   async function finish() {
     const timeSpent = Math.floor((Date.now() - startTime.current) / 1000);
     const score = totalCount > 0 ? Math.round((correctCount / totalCount) * 100) : 0;
-    const xpBonus = (lesson?.xp_reward ?? 10) + (mistakes === 0 ? 5 : 0);
+    const xpBonus = (lesson?.xpReward ?? 10) + (mistakes === 0 ? 5 : 0);
     await addXp(xpBonus);
     await bumpStreak();
     if (sessionId) {
@@ -155,7 +155,7 @@ export default function Lesson() {
         <h2 className="mt-4 text-3xl font-bold">Урок завершён!</h2>
         <div className="mt-6 grid grid-cols-3 gap-4 max-w-md w-full">
           <StatBox label="Точность" value={`${score}%`} />
-          <StatBox label="XP" value={`+${(lesson?.xp_reward ?? 10) + (mistakes === 0 ? 5 : 0)}`} />
+          <StatBox label="XP" value={`+${(lesson?.xpReward ?? 10) + (mistakes === 0 ? 5 : 0)}`} />
           <StatBox label="Ошибок" value={String(mistakes)} />
         </div>
         <div className="mt-8 flex gap-3">

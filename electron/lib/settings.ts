@@ -1,17 +1,21 @@
 import fs from 'node:fs';
 import { settingsPath } from './paths';
 
+export type TtsProvider = 'voxtral' | 'macos_say' | 'web_speech';
+
 export interface AppSettings {
   windowBounds?: { x?: number; y?: number; width: number; height: number };
   theme: 'dark' | 'light' | 'system';
   soundEffects: boolean;
   animations: boolean;
   autoPlayAudio: boolean;
-  preferredVoice: string;
+  ttsProvider: TtsProvider;
+  preferredVoice: string;        // macOS voice name (Samantha, Alex...)
+  voxtralVoiceId: string | null; // Voxtral voice_id (or null for default)
   voiceRate: number;
   showIpa: boolean;
   fsrsRetention: number;
-  useMacSay: boolean;
+  useMacSay: boolean;            // kept for back-compat; ignored if ttsProvider is set
   heartsEnabled: boolean;
   mistralApiKey?: string;
 }
@@ -21,7 +25,9 @@ const DEFAULTS: AppSettings = {
   soundEffects: true,
   animations: true,
   autoPlayAudio: true,
+  ttsProvider: 'voxtral',
   preferredVoice: 'Samantha',
+  voxtralVoiceId: null,
   voiceRate: 200,
   showIpa: true,
   fsrsRetention: 0.9,

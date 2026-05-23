@@ -15,8 +15,8 @@ export default function Grammar() {
 
   const grouped: Record<string, any[]> = {};
   for (const t of topics) {
-    if (!grouped[t.cefr_level]) grouped[t.cefr_level] = [];
-    grouped[t.cefr_level].push(t);
+    if (!grouped[t.cefrLevel]) grouped[t.cefrLevel] = [];
+    grouped[t.cefrLevel].push(t);
   }
 
   return (
@@ -36,7 +36,7 @@ export default function Grammar() {
                 >
                   <div className="text-left">
                     <div className="font-bold">{t.title}</div>
-                    <div className="text-sm text-ink-400 mt-0.5">{t.title_ru}</div>
+                    <div className="text-sm text-ink-400 mt-0.5">{t.titleRu}</div>
                   </div>
                   <ChevronRight size={18} className="text-ink-500 group-hover:text-brand-300 group-hover:translate-x-1 transition" />
                 </button>

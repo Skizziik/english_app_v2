@@ -1,11 +1,15 @@
 import { create } from 'zustand';
 
+export type TtsProvider = 'voxtral' | 'macos_say' | 'web_speech';
+
 export interface SettingsState {
   theme: 'dark' | 'light' | 'system';
   soundEffects: boolean;
   animations: boolean;
   autoPlayAudio: boolean;
+  ttsProvider: TtsProvider;
   preferredVoice: string;
+  voxtralVoiceId: string | null;
   voiceRate: number;
   showIpa: boolean;
   fsrsRetention: number;
@@ -16,12 +20,14 @@ export interface SettingsState {
   update: (patch: Partial<Omit<SettingsState, 'load' | 'update' | 'loaded'>>) => Promise<void>;
 }
 
-export const useSettings = create<SettingsState>((set, get) => ({
+export const useSettings = create<SettingsState>((set) => ({
   theme: 'dark',
   soundEffects: true,
   animations: true,
   autoPlayAudio: true,
+  ttsProvider: 'voxtral',
   preferredVoice: 'Samantha',
+  voxtralVoiceId: null,
   voiceRate: 200,
   showIpa: true,
   fsrsRetention: 0.9,

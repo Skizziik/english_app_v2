@@ -19,7 +19,7 @@ export default function GrammarTopic() {
 
   const examples: Array<{ en: string; ru: string }> = (() => {
     try {
-      return JSON.parse(topic.examples_json || '[]');
+      return JSON.parse(topic.examplesJson || '[]');
     } catch {
       return [];
     }
@@ -32,9 +32,9 @@ export default function GrammarTopic() {
       <button className="btn-ghost btn -ml-3 mb-4" onClick={() => navigate('/grammar')}>
         <ArrowLeft size={16} /> К списку
       </button>
-      <div className="text-xs text-ink-500">CEFR {topic.cefr_level}</div>
+      <div className="text-xs text-ink-500">CEFR {topic.cefrLevel}</div>
       <h1 className="text-3xl font-bold mt-1">{topic.title}</h1>
-      <h2 className="text-lg text-brand-200 mt-1">{topic.title_ru}</h2>
+      <h2 className="text-lg text-brand-200 mt-1">{topic.titleRu}</h2>
 
       <div className="card p-6 mt-6 prose prose-invert max-w-none">
         <div dangerouslySetInnerHTML={{ __html: explanation }} />

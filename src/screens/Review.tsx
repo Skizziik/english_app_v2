@@ -106,10 +106,10 @@ export default function Review() {
             {showBack && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-6 pt-6 border-t border-ink-800">
                 <div className="text-2xl font-semibold text-brand-200">{current.russian}</div>
-                {current.example_en && (
+                {current.exampleEn && (
                   <div className="mt-4 text-sm text-ink-300">
-                    <div className="italic">{current.example_en}</div>
-                    {current.example_ru && <div className="text-ink-400 mt-1">{current.example_ru}</div>}
+                    <div className="italic">{current.exampleEn}</div>
+                    {current.exampleRu && <div className="text-ink-400 mt-1">{current.exampleRu}</div>}
                   </div>
                 )}
               </motion.div>
