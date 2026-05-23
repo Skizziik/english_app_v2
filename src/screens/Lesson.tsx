@@ -5,6 +5,7 @@ import { X, ArrowRight, Sparkles } from 'lucide-react';
 import { ProgressBar } from '@/components/ProgressBar';
 import { EXERCISES } from '@/components/exercises';
 import type { ExerciseKind } from '@/components/exercises/types';
+import { hasEmoji } from '@/components/exercises/emoji';
 import { Confetti } from '@/components/Confetti';
 import { Mascot } from '@/components/layout/Mascot';
 import { SpeakButton } from '@/components/SpeakButton';
@@ -62,8 +63,14 @@ export default function Lesson() {
       }
       const steps: ExerciseStep[] = [];
       const expanded = shuffle([...words, ...words]);
+      // Filter out ImageWord for words that don't have an emoji so we never show
+      // four identical "abc" placeholders.
+      const swap = (kind: ExerciseKind, w: Word): ExerciseKind => {
+        if (kind === 'ImageWord' && !hasEmoji(w.english)) return 'TranslationMC';
+        return kind;
+      };
       for (let i = 0; i < expanded.length; i++) {
-        const kind = types[i % types.length];
+        const kind = swap(types[i % types.length], expanded[i]);
         steps.push({ kind, word: expanded[i] });
       }
       setQueue(steps);

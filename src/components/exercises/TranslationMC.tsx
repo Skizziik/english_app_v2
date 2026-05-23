@@ -1,7 +1,9 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ExerciseShell } from './ExerciseShell';
 import { SpeakButton } from '@/components/SpeakButton';
 import { pickRandom, shuffle, cn } from '@/lib/utils';
+import { useTTS } from '@/hooks/useTTS';
+import { useSettings } from '@/stores/settingsStore';
 import type { ExerciseProps } from './types';
 
 export function TranslationMC({ word, pool, onResult, onContinue }: ExerciseProps) {
@@ -12,6 +14,12 @@ export function TranslationMC({ word, pool, onResult, onContinue }: ExerciseProp
 
   const [picked, setPicked] = useState<string | null>(null);
   const [done, setDone] = useState(false);
+  const autoPlay = useSettings((s) => s.autoPlayAudio);
+  const { speak } = useTTS();
+
+  useEffect(() => {
+    if (autoPlay) speak(word.english).catch(() => {});
+  }, [word.id]);
 
   return (
     <ExerciseShell

@@ -1,6 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ExerciseShell } from './ExerciseShell';
 import { pickRandom, shuffle, cn } from '@/lib/utils';
+import { useTTS } from '@/hooks/useTTS';
+import { useSettings } from '@/stores/settingsStore';
 import type { ExerciseProps } from './types';
 
 function makeBlank(word: any): { sentence: string; target: string } {
@@ -22,6 +24,12 @@ export function FillBlank({ word, pool, onResult, onContinue }: ExerciseProps) {
 
   const [picked, setPicked] = useState<string | null>(null);
   const [done, setDone] = useState(false);
+  const autoPlay = useSettings((s) => s.autoPlayAudio);
+  const { speak } = useTTS();
+
+  useEffect(() => {
+    if (autoPlay && word.exampleEn) speak(word.exampleEn).catch(() => {});
+  }, [word.id]);
 
   return (
     <ExerciseShell

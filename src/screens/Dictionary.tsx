@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Search, Plus, BookOpen } from 'lucide-react';
 import { SpeakButton } from '@/components/SpeakButton';
+import { useTTS } from '@/hooks/useTTS';
+import { useSettings } from '@/stores/settingsStore';
 import { toast } from 'sonner';
 import type { Word } from '@/types';
 
@@ -11,6 +13,12 @@ export default function Dictionary() {
   const [level, setLevel] = useState('');
   const [items, setItems] = useState<Word[]>([]);
   const [selected, setSelected] = useState<Word | null>(null);
+  const autoPlay = useSettings((s) => s.autoPlayAudio);
+  const { speak } = useTTS();
+
+  useEffect(() => {
+    if (autoPlay && selected?.english) speak(selected.english).catch(() => {});
+  }, [selected?.id]);
 
   useEffect(() => {
     (async () => {

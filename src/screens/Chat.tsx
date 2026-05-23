@@ -2,7 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Send, Mic, Sparkles } from 'lucide-react';
 import { SpeakButton } from '@/components/SpeakButton';
 import { useSTT } from '@/hooks/useSTT';
+import { useTTS } from '@/hooks/useTTS';
 import { useUserStore } from '@/stores/userStore';
+import { useSettings } from '@/stores/settingsStore';
 import { toast } from 'sonner';
 
 const SCENARIOS = [
@@ -50,12 +52,15 @@ interface Msg {
 
 export default function Chat() {
   const user = useUserStore((s) => s.user);
+  const autoPlay = useSettings((s) => s.autoPlayAudio);
+  const { speak } = useTTS();
   const [scenarioId, setScenarioId] = useState<string | null>(null);
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState('');
   const [sending, setSending] = useState(false);
   const stt = useSTT((text) => setInput((prev) => (prev ? prev + ' ' + text : text)));
   const scrollRef = useRef<HTMLDivElement>(null);
+  const lastSpokenIdx = useRef<number>(-1);
 
   const scenario = SCENARIOS.find((s) => s.id === scenarioId);
 
@@ -71,7 +76,14 @@ export default function Chat() {
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' });
-  }, [messages]);
+    if (!autoPlay) return;
+    const lastIdx = messages.length - 1;
+    const last = messages[lastIdx];
+    if (last?.role === 'assistant' && lastIdx > lastSpokenIdx.current) {
+      lastSpokenIdx.current = lastIdx;
+      speak(last.content).catch(() => {});
+    }
+  }, [messages, autoPlay]);
 
   async function send() {
     if (!input.trim() || sending) return;

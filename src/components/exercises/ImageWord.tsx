@@ -1,30 +1,30 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ExerciseShell } from './ExerciseShell';
 import { pickRandom, shuffle, cn } from '@/lib/utils';
 import { SpeakButton } from '@/components/SpeakButton';
+import { useTTS } from '@/hooks/useTTS';
+import { useSettings } from '@/stores/settingsStore';
 import type { ExerciseProps } from './types';
-
-const EMOJI_MAP: Record<string, string> = {
-  dog: '🐕', cat: '🐈', fish: '🐟', house: '🏠', car: '🚗', tree: '🌳', flower: '🌸', sun: '☀️',
-  moon: '🌙', sky: '☁️', bread: '🍞', milk: '🥛', tea: '🍵', coffee: '☕', apple: '🍎', egg: '🥚',
-  meat: '🥩', rice: '🍚', soup: '🍲', water: '💧', book: '📖', pen: '🖊️', phone: '📱',
-  table: '🪑', chair: '🪑', bed: '🛏️', door: '🚪', window: '🪟', school: '🏫', shop: '🏪',
-  city: '🏙️', street: '🛣️', train: '🚆', bus: '🚌', plane: '✈️', mother: '👩', father: '👨',
-  brother: '👦', sister: '👧', son: '👦', daughter: '👧', friend: '👫', boy: '👦', girl: '👧',
-  man: '👨', woman: '👩', happy: '😊', sad: '😢', hot: '🔥', cold: '❄️',
-};
-
-function emojiFor(en: string): string {
-  return EMOJI_MAP[en.toLowerCase()] ?? '🔤';
-}
+import { EMOJI_MAP, hasEmoji, emojiFor } from './emoji';
 
 export function ImageWord({ word, pool, onResult, onContinue }: ExerciseProps) {
+  // Prefer distractors that also have emojis so all four tiles are visually distinct.
   const choices = useMemo(() => {
-    const distractors = pickRandom(pool.filter((p) => p.id !== word.id), 3);
+    const withEmoji = pool.filter((p) => p.id !== word.id && hasEmoji(p.english));
+    const distractors = pickRandom(
+      withEmoji.length >= 3 ? withEmoji : pool.filter((p) => p.id !== word.id),
+      3,
+    );
     return shuffle([word, ...distractors]);
   }, [word.id]);
   const [pickedId, setPickedId] = useState<number | null>(null);
   const [done, setDone] = useState(false);
+  const autoPlay = useSettings((s) => s.autoPlayAudio);
+  const { speak } = useTTS();
+
+  useEffect(() => {
+    if (autoPlay) speak(word.english).catch(() => {});
+  }, [word.id]);
 
   return (
     <ExerciseShell

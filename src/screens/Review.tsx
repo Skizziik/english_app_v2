@@ -6,6 +6,8 @@ import { SpeakButton } from '@/components/SpeakButton';
 import { Mascot } from '@/components/layout/Mascot';
 import { useUserStore } from '@/stores/userStore';
 import { useSounds } from '@/hooks/useSounds';
+import { useTTS } from '@/hooks/useTTS';
+import { useSettings } from '@/stores/settingsStore';
 import { ProgressBar } from '@/components/ProgressBar';
 
 const RATING_LABELS = [
@@ -19,6 +21,8 @@ export default function Review() {
   const navigate = useNavigate();
   const { play } = useSounds();
   const { addXp } = useUserStore();
+  const autoPlay = useSettings((s) => s.autoPlayAudio);
+  const { speak } = useTTS();
   const [queue, setQueue] = useState<any[]>([]);
   const [idx, setIdx] = useState(0);
   const [showBack, setShowBack] = useState(false);
@@ -34,6 +38,10 @@ export default function Review() {
   }, []);
 
   const current = queue[idx];
+
+  useEffect(() => {
+    if (autoPlay && current?.english) speak(current.english).catch(() => {});
+  }, [current?.id]);
 
   async function rate(rating: 1 | 2 | 3 | 4) {
     if (!current) return;
