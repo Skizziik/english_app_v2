@@ -27,8 +27,10 @@ async function getClient(): Promise<any> {
 const MODELS = {
   fast: 'mistral-small-latest',
   smart: 'mistral-large-latest',
-  tts: 'voxtral-mini-latest',
+  tts: 'voxtral-mini-tts-2603',
 } as const;
+
+const DEFAULT_VOXTRAL_VOICE = 'c69964a6-ab8b-4f8a-9465-ec0925096ec8'; // Paul - Neutral (en_US)
 
 let lastCallAt = 0;
 let callsThisMinute = 0;
@@ -149,7 +151,8 @@ Return ONLY valid JSON: { "valid": true/false, "suggestion": "...", "explanation
   // Voxtral TTS via Mistral. Returns base64-encoded mp3.
   ipcMain.handle('mistral:tts', async (_e, payload: { text: string; voiceId?: string }) => {
     const trimmed = payload.text.slice(0, 1000);
-    const key = cacheKey('voxtral|' + (payload.voiceId ?? 'default'), trimmed);
+    const chosenVoice = payload.voiceId ?? DEFAULT_VOXTRAL_VOICE;
+    const key = cacheKey('voxtral|' + chosenVoice, trimmed);
     const cached = readCache(key);
     if (cached) return cached;
 
@@ -158,16 +161,16 @@ Return ONLY valid JSON: { "valid": true/false, "suggestion": "...", "explanation
     const req: any = {
       model: MODELS.tts,
       input: trimmed,
+      voiceId: chosenVoice,
       responseFormat: 'mp3' as any,
     };
-    if (payload.voiceId) req.voiceId = payload.voiceId;
 
     const result: any = await client.audio.speech.complete(req);
     const audioData: string | undefined = result?.audioData ?? result?.audio_data;
     if (!audioData || typeof audioData !== 'string') {
       throw new Error('Voxtral: no audio in response');
     }
-    writeCache(key, trimmed, audioData, 'voxtral', 7);
+    writeCache(key, trimmed, audioData, 'voxtral', 30);
     return audioData;
   });
 
@@ -175,12 +178,17 @@ Return ONLY valid JSON: { "valid": true/false, "suggestion": "...", "explanation
     try {
       const client = await getClient();
       const list: any = await client.audio.voices.list({});
-      const items = list?.data ?? list?.voices ?? [];
-      return items.map((v: any) => ({
-        id: v.id ?? v.voice_id ?? v.name,
-        name: v.name ?? v.id,
-        description: v.description ?? '',
-      }));
+      const items = list?.items ?? list?.data ?? list?.voices ?? [];
+      return items
+        .filter((v: any) => (v.languages || []).some((l: string) => l.toLowerCase().startsWith('en')))
+        .map((v: any) => ({
+          id: v.id,
+          name: v.name ?? v.slug,
+          slug: v.slug,
+          gender: v.gender,
+          tags: v.tags ?? [],
+          languages: v.languages ?? [],
+        }));
     } catch (err: any) {
       console.warn('[mistral:listVoices]', err.message);
       return [];

@@ -8,8 +8,23 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 10,
-    "wordEnglish": ["I", "you", "hello", "thank you", "yes", "no", "please"],
-    "exerciseTypes": ["ImageWord", "TranslationMC", "ReverseTranslationMC", "Matching", "Typing", "ListeningMC"]
+    "wordEnglish": [
+      "I",
+      "you",
+      "hello",
+      "thank you",
+      "yes",
+      "no",
+      "please"
+    ],
+    "exerciseTypes": [
+      "ImageWord",
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "Typing",
+      "ListeningMC"
+    ]
   },
   {
     "unitOrder": 1,
@@ -20,8 +35,22 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 10,
-    "wordEnglish": ["he", "she", "we", "they", "it", "this", "that"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Matching", "Typing", "ListeningType"]
+    "wordEnglish": [
+      "he",
+      "she",
+      "we",
+      "they",
+      "it",
+      "this",
+      "that"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "Typing",
+      "ListeningType"
+    ]
   },
   {
     "unitOrder": 1,
@@ -32,8 +61,23 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 10,
-    "wordEnglish": ["good", "bad", "big", "small", "new", "old", "hot", "cold"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Matching", "Typing", "WordBank"]
+    "wordEnglish": [
+      "good",
+      "bad",
+      "big",
+      "small",
+      "new",
+      "old",
+      "hot",
+      "cold"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "Typing",
+      "WordBank"
+    ]
   },
   {
     "unitOrder": 1,
@@ -44,8 +88,19 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 7,
     "xpReward": 15,
-    "wordEnglish": ["be", "I", "you", "he", "she"],
-    "exerciseTypes": ["FillBlank", "WordBank", "Typing", "TranslationMC"]
+    "wordEnglish": [
+      "be",
+      "I",
+      "you",
+      "he",
+      "she"
+    ],
+    "exerciseTypes": [
+      "FillBlank",
+      "WordBank",
+      "Typing",
+      "TranslationMC"
+    ]
   },
   {
     "unitOrder": 1,
@@ -56,10 +111,25 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 20,
-    "wordEnglish": ["I", "you", "hello", "good", "bad", "be", "this", "that"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Typing", "WordBank", "ListeningMC", "Matching"]
+    "wordEnglish": [
+      "I",
+      "you",
+      "hello",
+      "good",
+      "bad",
+      "be",
+      "this",
+      "that"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Typing",
+      "WordBank",
+      "ListeningMC",
+      "Matching"
+    ]
   },
-
   {
     "unitOrder": 2,
     "order": 1,
@@ -69,8 +139,22 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 10,
-    "wordEnglish": ["mother", "father", "brother", "sister", "son", "daughter", "friend"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Matching", "Typing", "ListeningType"]
+    "wordEnglish": [
+      "mother",
+      "father",
+      "brother",
+      "sister",
+      "son",
+      "daughter",
+      "friend"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "Typing",
+      "ListeningType"
+    ]
   },
   {
     "unitOrder": 2,
@@ -81,8 +165,23 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 10,
-    "wordEnglish": ["house", "home", "room", "door", "window", "table", "chair", "bed"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Matching", "Typing", "WordBank"]
+    "wordEnglish": [
+      "house",
+      "home",
+      "room",
+      "door",
+      "window",
+      "table",
+      "chair",
+      "bed"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "Typing",
+      "WordBank"
+    ]
   },
   {
     "unitOrder": 2,
@@ -93,8 +192,19 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 7,
     "xpReward": 15,
-    "wordEnglish": ["have", "book", "pen", "phone", "I"],
-    "exerciseTypes": ["WordBank", "FillBlank", "Typing", "TranslationMC"]
+    "wordEnglish": [
+      "have",
+      "book",
+      "pen",
+      "phone",
+      "I"
+    ],
+    "exerciseTypes": [
+      "WordBank",
+      "FillBlank",
+      "Typing",
+      "TranslationMC"
+    ]
   },
   {
     "unitOrder": 2,
@@ -105,8 +215,18 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 10,
-    "wordEnglish": ["dog", "cat", "fish"],
-    "exerciseTypes": ["ImageWord", "TranslationMC", "ReverseTranslationMC", "Typing", "ListeningMC"]
+    "wordEnglish": [
+      "dog",
+      "cat",
+      "fish"
+    ],
+    "exerciseTypes": [
+      "ImageWord",
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Typing",
+      "ListeningMC"
+    ]
   },
   {
     "unitOrder": 2,
@@ -117,10 +237,24 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 20,
-    "wordEnglish": ["mother", "father", "house", "room", "dog", "cat", "have"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Matching", "Typing", "WordBank", "ListeningType"]
+    "wordEnglish": [
+      "mother",
+      "father",
+      "house",
+      "room",
+      "dog",
+      "cat",
+      "have"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "Typing",
+      "WordBank",
+      "ListeningType"
+    ]
   },
-
   {
     "unitOrder": 3,
     "order": 1,
@@ -130,8 +264,20 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 10,
-    "wordEnglish": ["bread", "milk", "tea", "coffee", "egg"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Matching", "Typing", "ListeningType"]
+    "wordEnglish": [
+      "bread",
+      "milk",
+      "tea",
+      "coffee",
+      "egg"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "Typing",
+      "ListeningType"
+    ]
   },
   {
     "unitOrder": 3,
@@ -142,8 +288,20 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 10,
-    "wordEnglish": ["fish", "meat", "rice", "soup", "apple"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Matching", "Typing", "WordBank"]
+    "wordEnglish": [
+      "fish",
+      "meat",
+      "rice",
+      "soup",
+      "apple"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "Typing",
+      "WordBank"
+    ]
   },
   {
     "unitOrder": 3,
@@ -154,8 +312,19 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 7,
     "xpReward": 15,
-    "wordEnglish": ["want", "like", "love", "eat", "drink"],
-    "exerciseTypes": ["WordBank", "Typing", "FillBlank", "TranslationMC"]
+    "wordEnglish": [
+      "want",
+      "like",
+      "love",
+      "eat",
+      "drink"
+    ],
+    "exerciseTypes": [
+      "WordBank",
+      "Typing",
+      "FillBlank",
+      "TranslationMC"
+    ]
   },
   {
     "unitOrder": 3,
@@ -166,10 +335,24 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 20,
-    "wordEnglish": ["bread", "milk", "tea", "coffee", "fish", "rice", "want", "like"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Typing", "Matching", "ListeningMC"]
+    "wordEnglish": [
+      "bread",
+      "milk",
+      "tea",
+      "coffee",
+      "fish",
+      "rice",
+      "want",
+      "like"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Typing",
+      "Matching",
+      "ListeningMC"
+    ]
   },
-
   {
     "unitOrder": 4,
     "order": 1,
@@ -179,8 +362,25 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 10,
-    "wordEnglish": ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Matching", "Typing", "ListeningType"]
+    "wordEnglish": [
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine",
+      "ten"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "Typing",
+      "ListeningType"
+    ]
   },
   {
     "unitOrder": 4,
@@ -191,8 +391,22 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 10,
-    "wordEnglish": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Matching", "Typing", "ListeningMC"]
+    "wordEnglish": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "Typing",
+      "ListeningMC"
+    ]
   },
   {
     "unitOrder": 4,
@@ -203,10 +417,24 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 5,
     "xpReward": 10,
-    "wordEnglish": ["morning", "evening", "day", "night", "today", "tomorrow", "yesterday", "now"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Typing", "WordBank", "ListeningType"]
+    "wordEnglish": [
+      "morning",
+      "evening",
+      "day",
+      "night",
+      "today",
+      "tomorrow",
+      "yesterday",
+      "now"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Typing",
+      "WordBank",
+      "ListeningType"
+    ]
   },
-
   {
     "unitOrder": 5,
     "order": 1,
@@ -216,8 +444,21 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 6,
     "xpReward": 12,
-    "wordEnglish": ["go", "come", "see", "know", "do", "say"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Matching", "Typing", "WordBank"]
+    "wordEnglish": [
+      "go",
+      "come",
+      "see",
+      "know",
+      "do",
+      "say"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "Typing",
+      "WordBank"
+    ]
   },
   {
     "unitOrder": 5,
@@ -228,8 +469,21 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 6,
     "xpReward": 12,
-    "wordEnglish": ["read", "write", "speak", "listen", "look", "play"],
-    "exerciseTypes": ["TranslationMC", "ReverseTranslationMC", "Matching", "Typing", "ListeningType"]
+    "wordEnglish": [
+      "read",
+      "write",
+      "speak",
+      "listen",
+      "look",
+      "play"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "Typing",
+      "ListeningType"
+    ]
   },
   {
     "unitOrder": 5,
@@ -240,7 +494,1415 @@
     "cefrLevel": "A1",
     "estimatedMinutes": 8,
     "xpReward": 18,
-    "wordEnglish": ["go", "read", "eat", "drink", "I", "you", "he"],
-    "exerciseTypes": ["FillBlank", "WordBank", "Typing", "TransformSentence"]
+    "wordEnglish": [
+      "go",
+      "read",
+      "eat",
+      "drink",
+      "I",
+      "you",
+      "he"
+    ],
+    "exerciseTypes": [
+      "FillBlank",
+      "WordBank",
+      "Typing",
+      "TransformSentence"
+    ]
+  },
+  {
+    "unitOrder": 1,
+    "order": 6,
+    "title": "People 6",
+    "description": "Слова темы: people",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "boy",
+      "girl",
+      "man",
+      "woman"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 1,
+    "order": 7,
+    "title": "Basics 7",
+    "description": "Слова темы: basics",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "name",
+      "here",
+      "there"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 6,
+    "title": "Animals 6",
+    "description": "Слова темы: animals",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "bird",
+      "cow",
+      "horse",
+      "pig",
+      "duck",
+      "mouse"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 7,
+    "title": "Animals 7",
+    "description": "Слова темы: animals",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "frog",
+      "snake",
+      "bear",
+      "lion",
+      "tiger",
+      "elephant"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 8,
+    "title": "Animals 8",
+    "description": "Слова темы: animals",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "monkey",
+      "rabbit",
+      "sheep",
+      "goat",
+      "zebra",
+      "giraffe"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 9,
+    "title": "Animals 9",
+    "description": "Слова темы: animals",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "kangaroo",
+      "panda",
+      "wolf"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 10,
+    "title": "Home 10",
+    "description": "Слова темы: home",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "kitchen",
+      "bedroom",
+      "bathroom",
+      "living room",
+      "wall",
+      "floor"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 11,
+    "title": "Home 11",
+    "description": "Слова темы: home",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "ceiling",
+      "sofa",
+      "lamp",
+      "rug",
+      "mirror",
+      "shelf"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 12,
+    "title": "Home 12",
+    "description": "Слова темы: home",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "closet",
+      "garden",
+      "stairs",
+      "roof",
+      "key",
+      "light"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 13,
+    "title": "Home 13",
+    "description": "Слова темы: home",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "curtain",
+      "fridge",
+      "oven",
+      "sink",
+      "toilet"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 14,
+    "title": "Objects 14",
+    "description": "Слова темы: objects",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "pencil",
+      "bag",
+      "cup",
+      "plate",
+      "spoon",
+      "fork"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 15,
+    "title": "Objects 15",
+    "description": "Слова темы: objects",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "knife",
+      "box",
+      "bottle",
+      "glass",
+      "umbrella"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 1,
+    "title": "Transport 1",
+    "description": "Слова темы: transport",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "car",
+      "bus",
+      "train",
+      "taxi",
+      "plane",
+      "boat"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 2,
+    "title": "Transport 2",
+    "description": "Слова темы: transport",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "ship",
+      "road",
+      "drive",
+      "ride",
+      "ticket"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 3,
+    "title": "Places 3",
+    "description": "Слова темы: places",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "school",
+      "shop",
+      "city",
+      "street",
+      "park",
+      "hospital"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 4,
+    "title": "Places 4",
+    "description": "Слова темы: places",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "bank",
+      "cafe",
+      "cinema",
+      "library",
+      "station",
+      "bridge"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 5,
+    "title": "Places 5",
+    "description": "Слова темы: places",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "museum",
+      "hotel",
+      "restaurant",
+      "market",
+      "zoo",
+      "church"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 6,
+    "order": 6,
+    "title": "Places 6",
+    "description": "Слова темы: places",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "post office",
+      "pharmacy",
+      "parking",
+      "square",
+      "airport",
+      "theater"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 3,
+    "order": 5,
+    "title": "Food 5",
+    "description": "Слова темы: food",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "water",
+      "banana",
+      "butter",
+      "cake",
+      "carrot",
+      "cheese"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 3,
+    "order": 6,
+    "title": "Food 6",
+    "description": "Слова темы: food",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "chicken",
+      "fruit",
+      "juice",
+      "onion",
+      "potato",
+      "salad"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 3,
+    "order": 7,
+    "title": "Food 7",
+    "description": "Слова темы: food",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "salt",
+      "sandwich",
+      "sugar",
+      "tomato",
+      "yogurt",
+      "beer"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 3,
+    "order": 8,
+    "title": "Food 8",
+    "description": "Слова темы: food",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "wine",
+      "honey",
+      "pepper",
+      "lemon",
+      "ice cream",
+      "chocolate"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 16,
+    "title": "Family 16",
+    "description": "Слова темы: family",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "baby",
+      "grandmother",
+      "grandfather",
+      "aunt",
+      "uncle",
+      "cousin"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 17,
+    "title": "Family 17",
+    "description": "Слова темы: family",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "family",
+      "parent",
+      "child",
+      "wife",
+      "husband",
+      "young"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 18,
+    "title": "Family 18",
+    "description": "Слова темы: family",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "live",
+      "pet",
+      "photo",
+      "visit",
+      "birthday"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 4,
+    "title": "Verbs 4",
+    "description": "Слова темы: verbs",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "sleep",
+      "run",
+      "walk",
+      "take",
+      "give",
+      "make"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 5,
+    "title": "Verbs 5",
+    "description": "Слова темы: verbs",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "need",
+      "think",
+      "find",
+      "open",
+      "close",
+      "start"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 6,
+    "title": "Verbs 6",
+    "description": "Слова темы: verbs",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "stop",
+      "help",
+      "ask",
+      "answer",
+      "study",
+      "learn"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 4,
+    "order": 4,
+    "title": "Numbers 4",
+    "description": "Слова темы: numbers",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "eleven",
+      "twelve",
+      "thirteen",
+      "fourteen",
+      "fifteen",
+      "sixteen"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 4,
+    "order": 5,
+    "title": "Numbers 5",
+    "description": "Слова темы: numbers",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "seventeen",
+      "eighteen",
+      "nineteen",
+      "twenty",
+      "thirty",
+      "forty"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 4,
+    "order": 6,
+    "title": "Numbers 6",
+    "description": "Слова темы: numbers",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "fifty",
+      "hundred",
+      "number"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 4,
+    "order": 7,
+    "title": "Time 7",
+    "description": "Слова темы: time",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "time",
+      "afternoon",
+      "week",
+      "month",
+      "year",
+      "hour"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 4,
+    "order": 8,
+    "title": "Time 8",
+    "description": "Слова темы: time",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "minute",
+      "second",
+      "clock",
+      "watch",
+      "soon",
+      "January"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 7,
+    "title": "Emotions 7",
+    "description": "Слова темы: emotions",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "happy",
+      "sad",
+      "angry",
+      "scared",
+      "tired",
+      "surprised"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 8,
+    "title": "Emotions 8",
+    "description": "Слова темы: emotions",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "hate",
+      "excited",
+      "bored",
+      "proud",
+      "shy",
+      "lonely"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 4,
+    "order": 9,
+    "title": "Colors 9",
+    "description": "Слова темы: colors",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "red",
+      "blue",
+      "green",
+      "black",
+      "white",
+      "yellow"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 4,
+    "order": 10,
+    "title": "Colors 10",
+    "description": "Слова темы: colors",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "orange",
+      "pink",
+      "brown",
+      "gray",
+      "purple",
+      "color"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 4,
+    "order": 11,
+    "title": "Nature 11",
+    "description": "Слова темы: nature",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "sun",
+      "moon",
+      "sky",
+      "tree",
+      "flower"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 19,
+    "title": "Body 19",
+    "description": "Слова темы: body",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "head",
+      "hair",
+      "eye",
+      "ear",
+      "nose",
+      "mouth"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 20,
+    "title": "Body 20",
+    "description": "Слова темы: body",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "tooth",
+      "neck",
+      "arm",
+      "hand",
+      "finger",
+      "leg"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 21,
+    "title": "Body 21",
+    "description": "Слова темы: body",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "foot",
+      "knee",
+      "back",
+      "stomach",
+      "chest",
+      "shoulder"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 22,
+    "title": "Body 22",
+    "description": "Слова темы: body",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "face",
+      "lip",
+      "tongue",
+      "elbow",
+      "toe",
+      "heart"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 23,
+    "title": "Clothes 23",
+    "description": "Слова темы: clothes",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "shirt",
+      "pants",
+      "dress",
+      "skirt",
+      "shoes",
+      "hat"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 24,
+    "title": "Clothes 24",
+    "description": "Слова темы: clothes",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "jacket",
+      "socks",
+      "coat",
+      "T-shirt",
+      "jeans",
+      "gloves"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 2,
+    "order": 25,
+    "title": "Clothes 25",
+    "description": "Слова темы: clothes",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "scarf",
+      "boots",
+      "belt",
+      "shorts",
+      "blouse",
+      "sweater"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 4,
+    "order": 12,
+    "title": "Weather 12",
+    "description": "Слова темы: weather",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "rain",
+      "cloud",
+      "snow",
+      "wind",
+      "weather",
+      "storm"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 4,
+    "order": 13,
+    "title": "Weather 13",
+    "description": "Слова темы: weather",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "fog",
+      "ice",
+      "warm",
+      "cool",
+      "rainbow",
+      "thunder"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 4,
+    "order": 14,
+    "title": "Weather 14",
+    "description": "Слова темы: weather",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "lightning",
+      "season",
+      "spring",
+      "summer"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 9,
+    "title": "Adjectives 9",
+    "description": "Слова темы: adjectives",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "fast",
+      "slow",
+      "tall",
+      "short",
+      "beautiful",
+      "ugly"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 10,
+    "title": "Adjectives 10",
+    "description": "Слова темы: adjectives",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "clean",
+      "dirty",
+      "easy",
+      "difficult",
+      "full",
+      "empty"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 11,
+    "title": "Adjectives 11",
+    "description": "Слова темы: adjectives",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "heavy",
+      "bright",
+      "dark",
+      "noisy",
+      "quiet",
+      "soft"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 1,
+    "title": "Jobs 1",
+    "description": "Слова темы: jobs",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "teacher",
+      "doctor",
+      "nurse",
+      "driver",
+      "cook",
+      "waiter"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 2,
+    "title": "Jobs 2",
+    "description": "Слова темы: jobs",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "police",
+      "farmer",
+      "cleaner",
+      "builder",
+      "shop assistant",
+      "firefighter"
+    ],
+    "exerciseTypes": [
+      "Matching",
+      "ListeningMC",
+      "TranslationMC",
+      "Typing",
+      "FillBlank"
+    ]
+  },
+  {
+    "unitOrder": 7,
+    "order": 3,
+    "title": "Jobs 3",
+    "description": "Слова темы: jobs",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "postman",
+      "hairdresser",
+      "worker"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 12,
+    "title": "Hobbies 12",
+    "description": "Слова темы: hobbies",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "draw",
+      "dance",
+      "sing",
+      "swim",
+      "game",
+      "music"
+    ],
+    "exerciseTypes": [
+      "TranslationMC",
+      "ReverseTranslationMC",
+      "Matching",
+      "ImageWord",
+      "ListeningMC",
+      "Typing"
+    ]
+  },
+  {
+    "unitOrder": 5,
+    "order": 13,
+    "title": "Hobbies 13",
+    "description": "Слова темы: hobbies",
+    "type": "vocabulary",
+    "cefrLevel": "A1",
+    "estimatedMinutes": 4,
+    "xpReward": 12,
+    "wordEnglish": [
+      "ball",
+      "bike",
+      "paint",
+      "film"
+    ],
+    "exerciseTypes": [
+      "ReverseTranslationMC",
+      "TranslationMC",
+      "ListeningType",
+      "WordBank",
+      "Matching"
+    ]
   }
 ]

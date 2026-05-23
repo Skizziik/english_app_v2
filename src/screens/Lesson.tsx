@@ -1,14 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, X } from 'lucide-react';
+import { X, ArrowRight, Sparkles } from 'lucide-react';
 import { ProgressBar } from '@/components/ProgressBar';
 import { EXERCISES } from '@/components/exercises';
 import type { ExerciseKind } from '@/components/exercises/types';
 import { Confetti } from '@/components/Confetti';
 import { Mascot } from '@/components/layout/Mascot';
+import { SpeakButton } from '@/components/SpeakButton';
 import { useUserStore } from '@/stores/userStore';
 import { useSounds } from '@/hooks/useSounds';
+import { useTTS } from '@/hooks/useTTS';
 import { toast } from 'sonner';
 import type { Word } from '@/types';
 import { shuffle } from '@/lib/utils';
@@ -19,6 +21,8 @@ interface ExerciseStep {
 }
 
 const DEFAULT_TYPES: ExerciseKind[] = ['TranslationMC', 'ReverseTranslationMC', 'Matching', 'Typing', 'ListeningMC'];
+
+type Phase = 'loading' | 'preview' | 'exercising' | 'completed' | 'no-hearts';
 
 export default function Lesson() {
   const { id } = useParams();
@@ -33,9 +37,10 @@ export default function Lesson() {
   const [correctCount, setCorrectCount] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
   const [sessionId, setSessionId] = useState<number | null>(null);
-  const [completed, setCompleted] = useState(false);
-  const [outOfHearts, setOutOfHearts] = useState(false);
+  const [phase, setPhase] = useState<Phase>('loading');
+  const [previewIdx, setPreviewIdx] = useState(0);
   const startTime = useRef(Date.now());
+  const { speak } = useTTS();
 
   useEffect(() => {
     (async () => {
@@ -52,6 +57,7 @@ export default function Lesson() {
       const words: Word[] = l.words ?? [];
       if (words.length === 0) {
         toast.error('У этого урока нет слов');
+        navigate('/');
         return;
       }
       const steps: ExerciseStep[] = [];
@@ -64,13 +70,21 @@ export default function Lesson() {
       setTotalCount(steps.length);
       const sId = (await window.api.sessions.start('lesson')) as number;
       setSessionId(sId);
+      setPhase('preview');
     })();
   }, [lessonId]);
+
+  // Auto-pronounce word as preview advances
+  useEffect(() => {
+    if (phase !== 'preview') return;
+    const w: Word | undefined = lesson?.words?.[previewIdx];
+    if (w) speak(w.english).catch(() => {});
+  }, [phase, previewIdx, lesson]);
 
   const current = queue[idx];
   const ExerciseCmp = current ? EXERCISES[current.kind] : null;
 
-  async function handleResult(correct: boolean, _userAnswer?: string) {
+  async function handleResult(correct: boolean) {
     if (correct) {
       play('correct');
       setCorrectCount((c) => c + 1);
@@ -78,17 +92,10 @@ export default function Lesson() {
     } else {
       play('wrong');
       setMistakes((m) => m + 1);
-      const heartsBefore = stats?.hearts ?? 5;
-      if (heartsBefore > 0) {
-        await loseHeart();
-      }
+      if ((stats?.hearts ?? 5) > 0) await loseHeart();
       const updated = useUserStore.getState().stats;
-      if (updated && updated.hearts <= 0) {
-        setOutOfHearts(true);
-      }
-      if (current) {
-        setQueue((q) => [...q, current]);
-      }
+      if (updated && updated.hearts <= 0) setPhase('no-hearts');
+      if (current) setQueue((q) => [...q, current]);
     }
   }
 
@@ -123,12 +130,21 @@ export default function Lesson() {
       timeSpent,
       xp: xpBonus,
     });
+    // also enqueue the words into SRS
+    if (lesson?.words?.length) {
+      const wordIds = lesson.words.map((w: Word) => w.id);
+      await window.api.srs.enqueueWords(wordIds);
+    }
     await load();
-    setCompleted(true);
+    setPhase('completed');
     play('complete');
   }
 
-  if (outOfHearts) {
+  if (phase === 'loading' || !lesson) {
+    return <div className="h-full flex items-center justify-center text-ink-400">Загрузка урока...</div>;
+  }
+
+  if (phase === 'no-hearts') {
     return (
       <div className="h-full flex flex-col items-center justify-center p-8 text-center">
         <Mascot mood="sad" size={140} />
@@ -146,7 +162,7 @@ export default function Lesson() {
     );
   }
 
-  if (completed) {
+  if (phase === 'completed') {
     const score = totalCount > 0 ? Math.round((correctCount / totalCount) * 100) : 0;
     return (
       <div className="relative h-full flex flex-col items-center justify-center p-8 text-center">
@@ -162,16 +178,81 @@ export default function Lesson() {
           <button className="btn btn-secondary" onClick={() => navigate('/')}>
             На карту
           </button>
+          <button className="btn btn-primary" onClick={() => navigate('/review')}>
+            К повторению
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (phase === 'preview') {
+    const words: Word[] = lesson.words ?? [];
+    const w = words[previewIdx];
+    const isLast = previewIdx >= words.length - 1;
+    return (
+      <div className="h-full flex flex-col">
+        <div className="p-4 border-b border-ink-800 flex items-center gap-3">
+          <button onClick={() => navigate('/')} className="p-2 rounded-lg hover:bg-ink-800 text-ink-400" title="Закрыть">
+            <X size={18} />
+          </button>
+          <div className="flex-1">
+            <div className="text-xs uppercase tracking-wider text-brand-300 font-semibold flex items-center gap-1">
+              <Sparkles size={12} /> Знакомство со словами
+            </div>
+            <div className="text-sm font-semibold mt-0.5">{lesson.title}</div>
+          </div>
+          <div className="text-xs text-ink-400 tabular-nums">
+            {previewIdx + 1} / {words.length}
+          </div>
+        </div>
+
+        <div className="flex-1 flex items-center justify-center p-6">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={w.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="card p-8 max-w-md w-full text-center"
+            >
+              <div className="text-xs text-ink-400 uppercase tracking-wider mb-3">Новое слово</div>
+              <div className="flex items-center justify-center gap-3">
+                <div className="text-5xl font-bold">{w.english}</div>
+                <SpeakButton text={w.english} size="lg" />
+              </div>
+              {w.ipa && <div className="text-ink-400 mt-2">{w.ipa}</div>}
+              <div className="mt-5 text-2xl text-brand-200">{w.russian}</div>
+              {w.partOfSpeech && (
+                <div className="text-xs text-ink-500 mt-2">{w.partOfSpeech}</div>
+              )}
+              {w.exampleEn && (
+                <div className="mt-5 pt-5 border-t border-ink-800 text-sm">
+                  <div className="text-ink-200 italic">{w.exampleEn}</div>
+                  {w.exampleRu && <div className="text-ink-400 mt-1">{w.exampleRu}</div>}
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        <div className="p-4 border-t border-ink-800 flex justify-between items-center max-w-2xl mx-auto w-full">
           <button
-            className="btn btn-primary"
+            disabled={previewIdx === 0}
+            onClick={() => setPreviewIdx(previewIdx - 1)}
+            className="btn btn-ghost disabled:opacity-30"
+          >
+            Назад
+          </button>
+          <div className="text-xs text-ink-500">Послушай, повтори, нажми "{isLast ? 'Начать' : 'Дальше'}"</div>
+          <button
+            className="btn btn-primary px-6"
             onClick={() => {
-              setIdx(0);
-              setCorrectCount(0);
-              setMistakes(0);
-              setCompleted(false);
+              if (isLast) setPhase('exercising');
+              else setPreviewIdx(previewIdx + 1);
             }}
           >
-            Ещё раз
+            {isLast ? 'Начать упражнения' : 'Дальше'} <ArrowRight size={16} />
           </button>
         </div>
       </div>
@@ -179,7 +260,7 @@ export default function Lesson() {
   }
 
   if (!current || !ExerciseCmp) {
-    return <div className="h-full flex items-center justify-center text-ink-400">Загрузка урока...</div>;
+    return <div className="h-full flex items-center justify-center text-ink-400">Загрузка...</div>;
   }
 
   const pool = lesson?.words ?? [];
@@ -188,11 +269,7 @@ export default function Lesson() {
   return (
     <div className="h-full flex flex-col">
       <div className="p-4 border-b border-ink-800 flex items-center gap-3">
-        <button
-          onClick={() => navigate('/')}
-          className="p-2 rounded-lg hover:bg-ink-800 text-ink-400"
-          title="Закрыть"
-        >
+        <button onClick={() => navigate('/')} className="p-2 rounded-lg hover:bg-ink-800 text-ink-400" title="Закрыть">
           <X size={18} />
         </button>
         <ProgressBar value={progress} max={queue.length} className="flex-1" color="brand" />

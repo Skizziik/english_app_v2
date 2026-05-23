@@ -93,8 +93,8 @@ export async function seedIfEmpty(
 ): Promise<void> {
   const seedDir = path.join(resourcesDir, 'seed-data');
 
-  const wordCount = (sqlite.prepare('SELECT COUNT(*) AS c FROM words').get() as { c: number }).c;
-  if (wordCount === 0) {
+  // Words seed is idempotent: re-runs on every launch and just inserts new ones.
+  {
     const allWords: SeedWord[] = [];
     for (const level of ['a1', 'a2', 'b1', 'b2', 'c1']) {
       const file = path.join(seedDir, `words_${level}.json`);
@@ -102,28 +102,36 @@ export async function seedIfEmpty(
       allWords.push(...arr);
     }
     if (allWords.length > 0) {
-      const ins = sqlite.prepare(
-        `INSERT INTO words (english, russian, part_of_speech, cefr_level, ipa, frequency_rank, topic, example_en, example_ru, image_url)
-         VALUES (@english, @russian, @partOfSpeech, @cefrLevel, @ipa, @frequencyRank, @topic, @exampleEn, @exampleRu, @imageUrl)`,
+      const existing = new Set(
+        (sqlite.prepare('SELECT english, cefr_level FROM words').all() as Array<{ english: string; cefr_level: string }>).map(
+          (r) => `${r.english.toLowerCase()}|${r.cefr_level}`,
+        ),
       );
-      const tx = sqlite.transaction((rows: SeedWord[]) => {
-        for (const w of rows) {
-          ins.run({
-            english: w.english,
-            russian: w.russian,
-            partOfSpeech: w.partOfSpeech ?? null,
-            cefrLevel: w.cefrLevel,
-            ipa: w.ipa ?? null,
-            frequencyRank: w.frequencyRank ?? null,
-            topic: w.topic ?? null,
-            exampleEn: w.exampleEn ?? null,
-            exampleRu: w.exampleRu ?? null,
-            imageUrl: w.imageUrl ?? null,
-          });
-        }
-      });
-      tx(allWords);
-      console.log(`[seed] inserted ${allWords.length} words`);
+      const newRows = allWords.filter((w) => !existing.has(`${w.english.toLowerCase()}|${w.cefrLevel}`));
+      if (newRows.length > 0) {
+        const ins = sqlite.prepare(
+          `INSERT INTO words (english, russian, part_of_speech, cefr_level, ipa, frequency_rank, topic, example_en, example_ru, image_url)
+           VALUES (@english, @russian, @partOfSpeech, @cefrLevel, @ipa, @frequencyRank, @topic, @exampleEn, @exampleRu, @imageUrl)`,
+        );
+        const tx = sqlite.transaction((rows: SeedWord[]) => {
+          for (const w of rows) {
+            ins.run({
+              english: w.english,
+              russian: w.russian,
+              partOfSpeech: w.partOfSpeech ?? null,
+              cefrLevel: w.cefrLevel,
+              ipa: w.ipa ?? null,
+              frequencyRank: w.frequencyRank ?? null,
+              topic: w.topic ?? null,
+              exampleEn: w.exampleEn ?? null,
+              exampleRu: w.exampleRu ?? null,
+              imageUrl: w.imageUrl ?? null,
+            });
+          }
+        });
+        tx(newRows);
+        console.log(`[seed] inserted ${newRows.length} new words (total: ${allWords.length})`);
+      }
     }
   }
 
